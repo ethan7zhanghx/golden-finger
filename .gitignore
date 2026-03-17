@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Temp / local outputs
+tmp/
+.tmp/
+*.log
+*.pdf
+
+# Node / Python common
+node_modules/
+dist/
+build/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+.vscode/
