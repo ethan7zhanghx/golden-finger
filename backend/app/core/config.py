@@ -1,19 +1,22 @@
+from __future__ import annotations
+
+from functools import lru_cache
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    app_env: str = "development"
-    app_host: str = "0.0.0.0"
-    app_port: int = 8000
-    database_url: str = "postgresql+psycopg://postgres:postgres@postgres:5432/jinshouzhi"
-    redis_url: str = "redis://redis:6379/0"
-    jwt_secret_key: str = "change-me"
-    jwt_access_token_expire_minutes: int = 120
-    celery_broker_url: str = "redis://redis:6379/1"
-    celery_result_backend: str = "redis://redis:6379/2"
-    ernie_api_key: str = "replace-me"
+    model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8', extra='ignore')
 
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    app_name: str = 'Golden Finger API'
+    api_v1_str: str = '/api'
+    secret_key: str = 'change-me'
+    access_token_expire_minutes: int = 1440
+    database_url: str = 'sqlite:///./golden_finger.db'
+    redis_url: str = 'redis://localhost:6379/0'
+    ernie_api_key: str = 'replace-me'
 
 
-settings = Settings()
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()

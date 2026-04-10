@@ -6,19 +6,14 @@ from collections.abc import AsyncIterator
 from fastapi import APIRouter, Response, status
 from fastapi.responses import StreamingResponse
 
-from backend.app.schemas.ai import ActionRequest, GenerateRequest, RewriteRequest
-from backend.app.services.ai import WorkflowEngine, build_rewrite_input
+from app.schemas.ai import ActionRequest, GenerateRequest, RewriteRequest
+from app.services.ai import WorkflowEngine, build_rewrite_input
 
-router = APIRouter(prefix="/api")
+router = APIRouter(tags=["ai"])
 workflow_engine = WorkflowEngine()
 
 
-@router.get("/health", tags=["system"])
-async def healthcheck() -> dict[str, str]:
-    return {"status": "ok"}
-
-
-@router.post("/projects/{project_id}/steps/{step_code}/generate", tags=["ai"])
+@router.post("/projects/{project_id}/steps/{step_code}/generate")
 async def generate_step(project_id: str, step_code: str, request: GenerateRequest):
     if request.stream:
         stream = await workflow_engine.execute_step(
@@ -41,20 +36,19 @@ async def generate_step(project_id: str, step_code: str, request: GenerateReques
     )
 
 
-@router.post("/projects/{project_id}/steps/{step_code}/rewrite", tags=["ai"])
+@router.post("/projects/{project_id}/steps/{step_code}/rewrite")
 async def rewrite_step(project_id: str, step_code: str, request: RewriteRequest):
     generate_request = build_rewrite_input(request)
     return await generate_step(project_id=project_id, step_code=step_code, request=generate_request)
 
 
-@router.get("/projects/{project_id}/steps/{step_code}/context", tags=["ai"])
+@router.get("/projects/{project_id}/steps/{step_code}/context")
 async def get_step_context(project_id: str, step_code: str):
     return workflow_engine.get_context(project_id=project_id, step_code=step_code)
 
 
 @router.post(
     "/tool-runs/{run_id}/action",
-    tags=["ai"],
     status_code=status.HTTP_204_NO_CONTENT,
     response_class=Response,
 )
@@ -63,12 +57,12 @@ async def record_tool_run_action(run_id: str, request: ActionRequest) -> Respons
     return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
-@router.get("/tool-runs/{run_id}/status", tags=["ai"])
+@router.get("/tool-runs/{run_id}/status")
 async def get_tool_run_status(run_id: str):
     return workflow_engine.get_tool_run_status(run_id)
 
 
-@router.get("/prompts/{step_code}", tags=["ai"])
+@router.get("/prompts/{step_code}")
 async def get_active_prompt(step_code: str):
     return workflow_engine.get_prompt(step_code)
 

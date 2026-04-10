@@ -4,7 +4,7 @@ import json
 from collections.abc import AsyncIterator
 from uuid import uuid4
 
-from backend.app.schemas.ai import (
+from app.schemas.ai import (
     ContextAsset,
     ContextResponse,
     GenerateRequest,
