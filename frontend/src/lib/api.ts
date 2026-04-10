@@ -31,6 +31,37 @@ export const api = ky.create({
   },
 });
 
+// ── Backend → Frontend type transformations ───
+
+interface AssetOut {
+  id: string;
+  project_id: string;
+  step_code: string;
+  asset_type: string;
+  title: string | null;
+  content: Record<string, unknown> | null;
+  is_formal: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+function assetOutToStepAsset(raw: AssetOut): StepAsset {
+  const contentDict = raw.content ?? {};
+  // Backend stores content as JSONB: { text: "..." } or { content: "..." }
+  const text =
+    typeof contentDict.text === "string"
+      ? contentDict.text
+      : typeof contentDict.content === "string"
+        ? contentDict.content
+        : JSON.stringify(contentDict);
+  return {
+    stepCode: raw.step_code as StepCode,
+    content: text,
+    version: 0,
+    updatedAt: raw.updated_at,
+  };
+}
+
 // ── Project CRUD ──────────────────────────────
 
 export async function listProjects(): Promise<Project[]> {
@@ -57,9 +88,10 @@ export async function getStepAsset(
   projectId: string,
   stepCode: StepCode,
 ): Promise<StepAsset> {
-  return api
+  const raw = await api
     .get(`api/projects/${projectId}/steps/${stepCode}/asset`)
-    .json<StepAsset>();
+    .json<AssetOut>();
+  return assetOutToStepAsset(raw);
 }
 
 export async function saveStepAsset(
@@ -67,11 +99,12 @@ export async function saveStepAsset(
   stepCode: StepCode,
   content: string,
 ): Promise<StepAsset> {
-  return api
+  const raw = await api
     .patch(`api/projects/${projectId}/steps/${stepCode}/asset`, {
-      json: { content },
+      json: { text: content },
     })
-    .json<StepAsset>();
+    .json<AssetOut>();
+  return assetOutToStepAsset(raw);
 }
 
 // ── AI generation (non-stream) ────────────────

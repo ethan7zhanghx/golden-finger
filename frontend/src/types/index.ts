@@ -6,7 +6,7 @@
 // ── Step definitions ──────────────────────────
 
 export type StepCode =
-  | "writer_quality"
+  | "writing_quality"
   | "market_research"
   | "worldview"
   | "selling_point"
@@ -17,7 +17,7 @@ export type StepCode =
   | "narrative"
   | "opening"
   | "dialogue"
-  | "rhythm"
+  | "pacing"
   | "title"
   | "script_format"
   | "synopsis"

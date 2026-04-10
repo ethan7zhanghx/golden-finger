@@ -15,7 +15,7 @@ const phase = (
 
 export const STEPS: StepMeta[] = [
   ...phase("prepare", "准备阶段", [
-    ["writer_quality", "编剧素质", "form"],
+    ["writing_quality", "编剧素质", "form"],
     ["market_research", "扫榜调研", "form"],
   ]),
   ...phase("plan", "策划阶段", [
@@ -30,7 +30,7 @@ export const STEPS: StepMeta[] = [
     ["narrative", "叙事方法", "card"],
     ["opening", "开头写作", "richtext"],
     ["dialogue", "台词写作", "richtext"],
-    ["rhythm", "节奏控制", "analysis"],
+    ["pacing", "节奏控制", "analysis"],
   ]),
   ...phase("finalize", "完善阶段", [
     ["title", "剧名创作", "card"],
