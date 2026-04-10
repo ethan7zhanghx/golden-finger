@@ -1,28 +1,24 @@
 "use client";
 
 import { create } from "zustand";
-import type { StepCode, StepAsset } from "@/types";
+import type { StepAsset } from "@/types";
 
 interface StepState {
-  /** Cached step assets keyed by stepCode */
-  assets: Partial<Record<StepCode, StepAsset>>;
-  /** Currently active step */
-  activeStep: StepCode;
-  /** Dirty flag per step (unsaved local changes) */
-  dirty: Partial<Record<StepCode, boolean>>;
-  /** Step completion status */
-  completed: Partial<Record<StepCode, boolean>>;
+  assets: Record<string, StepAsset>;
+  activeStep: string;
+  dirty: Record<string, boolean>;
+  completed: Record<string, boolean>;
 
-  setActiveStep: (step: StepCode) => void;
-  setAsset: (step: StepCode, asset: StepAsset) => void;
-  updateContent: (step: StepCode, content: string) => void;
-  markDirty: (step: StepCode, dirty: boolean) => void;
-  markCompleted: (step: StepCode, completed: boolean) => void;
+  setActiveStep: (step: string) => void;
+  setAsset: (step: string, asset: StepAsset) => void;
+  updateContent: (step: string, content: string) => void;
+  markDirty: (step: string, dirty: boolean) => void;
+  markCompleted: (step: string, completed: boolean) => void;
 }
 
 export const useStepStore = create<StepState>((set) => ({
   assets: {},
-  activeStep: "worldview",
+  activeStep: "concept",
   dirty: {},
   completed: {},
 

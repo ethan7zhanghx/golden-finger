@@ -1,12 +1,12 @@
-import type { StepCode, StepMeta, StepPhase } from "@/types";
+import type { StepMeta, StepPhase } from "@/types";
 
 const phase = (
   p: StepPhase,
   label: string,
-  items: [StepCode, string, StepMeta["formType"]][],
+  items: [string, string, StepMeta["formType"]][],
 ): StepMeta[] =>
   items.map(([code, l, formType]) => ({
-    code,
+    code: code as StepMeta["code"],
     label: l,
     phase: p,
     phaseLabel: label,
@@ -15,8 +15,8 @@ const phase = (
 
 export const STEPS: StepMeta[] = [
   ...phase("prepare", "准备阶段", [
-    ["writer_quality", "编剧素质", "form"],
-    ["market_research", "扫榜调研", "form"],
+    ["concept", "概念验证", "form"],
+    ["outline", "故事大纲", "outline"],
   ]),
   ...phase("plan", "策划阶段", [
     ["worldview", "世界观设定", "card"],
@@ -25,9 +25,9 @@ export const STEPS: StepMeta[] = [
     ["skeleton", "骨骼框架", "outline"],
   ]),
   ...phase("create", "创作阶段", [
+    ["characters", "角色设定", "card"],
+    ["scenes", "场景拆解", "outline"],
     ["plot_beats", "剧情和桥段", "outline"],
-    ["character", "人物写作", "card"],
-    ["narrative", "叙事方法", "card"],
     ["opening", "开头写作", "richtext"],
     ["dialogue", "台词写作", "richtext"],
     ["rhythm", "节奏控制", "analysis"],
@@ -36,11 +36,11 @@ export const STEPS: StepMeta[] = [
     ["title", "剧名创作", "card"],
     ["script_format", "剧本格式", "analysis"],
     ["synopsis", "剧本介绍", "richtext"],
-    ["copyright", "版权证书", "analysis"],
+    ["writer-quality", "成稿润色", "richtext"],
   ]),
 ];
 
-export function getStepMeta(code: StepCode): StepMeta {
+export function getStepMeta(code: string): StepMeta {
   return STEPS.find((s) => s.code === code) ?? STEPS[0];
 }
 

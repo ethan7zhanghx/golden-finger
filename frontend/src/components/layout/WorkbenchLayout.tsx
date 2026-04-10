@@ -2,11 +2,10 @@
 
 import type { ReactNode } from "react";
 import { StepNavigation } from "./StepNavigation";
-import type { StepCode } from "@/types";
 
 interface WorkbenchLayoutProps {
   projectId: string;
-  onStepSelect: (step: StepCode) => void;
+  onStepSelect: (step: string) => void;
   children: ReactNode;
   assistantPanel?: ReactNode;
 }

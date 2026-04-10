@@ -1,14 +1,14 @@
 "use client";
 
 import { create } from "zustand";
-import type { Project, StepCode } from "@/types";
+import type { Project } from "@/types";
 
 interface ProjectState {
   projects: Project[];
   currentProject: Project | null;
   setProjects: (projects: Project[]) => void;
   setCurrentProject: (project: Project | null) => void;
-  updateCurrentStep: (step: StepCode) => void;
+  updateCurrentStep: (step: string) => void;
 }
 
 export const useProjectStore = create<ProjectState>((set) => ({
@@ -19,7 +19,7 @@ export const useProjectStore = create<ProjectState>((set) => ({
   updateCurrentStep: (step) =>
     set((state) => ({
       currentProject: state.currentProject
-        ? { ...state.currentProject, current_step: step }
+        ? { ...state.currentProject, current_step_code: step }
         : null,
     })),
 }));

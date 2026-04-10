@@ -1,9 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
-import { saveStepAsset } from "@/lib/api";
+import { createOrUpdateAsset } from "@/lib/api";
 import { useStepStore } from "@/stores/stepStore";
-import type { StepCode } from "@/types";
 
 const DEBOUNCE_MS = 500;
 
@@ -13,7 +12,7 @@ const DEBOUNCE_MS = 500;
  * Watches the step store for dirty flags and persists when
  * the user stops typing.
  */
-export function useAutoSave(projectId: string, stepCode: StepCode) {
+export function useAutoSave(projectId: string, stepCode: string) {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const savingRef = useRef(false);
 
@@ -28,8 +27,18 @@ export function useAutoSave(projectId: string, stepCode: StepCode) {
 
     savingRef.current = true;
     try {
-      const saved = await saveStepAsset(projectId, stepCode, asset.content);
-      useStepStore.getState().setAsset(stepCode, saved);
+      const saved = await createOrUpdateAsset(projectId, {
+        step_code: stepCode,
+        asset_type: "step_content",
+        title: stepCode,
+        content: { text: asset.content },
+      });
+      useStepStore.getState().setAsset(stepCode, {
+        stepCode,
+        content: (saved.content?.text as string) ?? asset.content,
+        version: saved.version,
+        updatedAt: saved.updated_at ?? saved.created_at,
+      });
     } catch (err) {
       console.error("[auto-save] failed:", err);
     } finally {

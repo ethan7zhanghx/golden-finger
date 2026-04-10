@@ -5,14 +5,13 @@ import { useParams, useRouter } from "next/navigation";
 import { WorkbenchLayout } from "@/components/layout/WorkbenchLayout";
 import { StepEditor } from "@/components/steps/StepEditor";
 import { useStepStore } from "@/stores/stepStore";
-import { getStepAsset } from "@/lib/api";
-import type { StepCode } from "@/types";
+import { listAssets } from "@/lib/api";
 
 export default function StepPage() {
   const params = useParams<{ id: string; step: string }>();
   const router = useRouter();
   const projectId = params.id;
-  const stepCode = params.step as StepCode;
+  const stepCode = params.step;
 
   const setActiveStep = useStepStore((s) => s.setActiveStep);
   const setAsset = useStepStore((s) => s.setAsset);
@@ -25,12 +24,30 @@ export default function StepPage() {
 
   // Load step asset from backend
   useEffect(() => {
-    if (existingAsset) return; // already cached
+    if (existingAsset) return;
 
-    getStepAsset(projectId, stepCode)
-      .then((asset) => setAsset(stepCode, asset))
+    listAssets(projectId)
+      .then((assets) => {
+        const match = assets.find(
+          (a) => a.step_code === stepCode && a.asset_type === "step_content",
+        );
+        if (match) {
+          setAsset(stepCode, {
+            stepCode,
+            content: (match.content?.text as string) ?? "",
+            version: match.version,
+            updatedAt: match.updated_at ?? match.created_at,
+          });
+        } else {
+          setAsset(stepCode, {
+            stepCode,
+            content: "",
+            version: 0,
+            updatedAt: new Date().toISOString(),
+          });
+        }
+      })
       .catch(() => {
-        // Backend not ready — initialize with empty content
         setAsset(stepCode, {
           stepCode,
           content: "",
@@ -40,7 +57,7 @@ export default function StepPage() {
       });
   }, [projectId, stepCode, existingAsset, setAsset]);
 
-  const handleStepSelect = (step: StepCode) => {
+  const handleStepSelect = (step: string) => {
     router.push(`/projects/${projectId}/steps/${step}`);
   };
 

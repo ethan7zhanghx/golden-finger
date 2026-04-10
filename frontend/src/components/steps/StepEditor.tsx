@@ -7,11 +7,10 @@ import { useAIGenerate } from "@/hooks/useAIGenerate";
 import { useAutoSave } from "@/hooks/useAutoSave";
 import { useStepStore } from "@/stores/stepStore";
 import { getStepMeta } from "@/lib/steps";
-import type { StepCode } from "@/types";
 
 interface StepEditorProps {
   projectId: string;
-  stepCode: StepCode;
+  stepCode: string;
 }
 
 /**
@@ -108,7 +107,7 @@ export function StepEditor({ projectId, stepCode }: StepEditorProps) {
   );
 }
 
-function SaveIndicator({ stepCode }: { stepCode: StepCode }) {
+function SaveIndicator({ stepCode }: { stepCode: string }) {
   const isDirty = useStepStore((s) => s.dirty[stepCode]);
 
   return (

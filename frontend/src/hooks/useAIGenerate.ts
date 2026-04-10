@@ -4,11 +4,9 @@ import { useCallback } from "react";
 import { generateStepStream, recordToolRunAction } from "@/lib/api";
 import { useAIStore } from "@/stores/aiStore";
 import { useSSE } from "./useSSE";
-import type { StepCode } from "@/types";
-
 interface UseAIGenerateOptions {
   projectId: string;
-  stepCode: StepCode;
+  stepCode: string;
 }
 
 /**

@@ -3,11 +3,10 @@
 import { useStepStore } from "@/stores/stepStore";
 import { PHASES, getPhaseSteps } from "@/lib/steps";
 import { CheckCircle2, Circle } from "lucide-react";
-import type { StepCode } from "@/types";
 
 interface StepNavigationProps {
   projectId: string;
-  onStepSelect: (step: StepCode) => void;
+  onStepSelect: (step: string) => void;
 }
 
 export function StepNavigation({ onStepSelect }: StepNavigationProps) {

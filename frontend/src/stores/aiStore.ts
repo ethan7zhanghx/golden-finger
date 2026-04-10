@@ -1,25 +1,21 @@
 "use client";
 
 import { create } from "zustand";
-import type { AICandidate, StepCode } from "@/types";
+import type { AICandidate } from "@/types";
 
 interface AIState {
-  /** All candidates keyed by stepCode */
-  candidates: Partial<Record<StepCode, AICandidate[]>>;
-  /** Whether AI generation is in progress */
+  candidates: Record<string, AICandidate[]>;
   generating: boolean;
-  /** Current streaming content buffer */
   streamBuffer: string;
-  /** Active run ID */
   activeRunId: string | null;
 
   startGeneration: (runId: string) => void;
   appendChunk: (content: string) => void;
-  finishGeneration: (stepCode: StepCode) => void;
+  finishGeneration: (stepCode: string) => void;
   failGeneration: () => void;
-  acceptCandidate: (stepCode: StepCode, candidateId: string) => void;
-  rejectCandidate: (stepCode: StepCode, candidateId: string) => void;
-  clearCandidates: (stepCode: StepCode) => void;
+  acceptCandidate: (stepCode: string, candidateId: string) => void;
+  rejectCandidate: (stepCode: string, candidateId: string) => void;
+  clearCandidates: (stepCode: string) => void;
 }
 
 export const useAIStore = create<AIState>((set) => ({

@@ -1,10 +1,10 @@
 "use client";
 
 import { Check, X, Loader2, Sparkles } from "lucide-react";
-import type { AICandidate, StepCode } from "@/types";
+import type { AICandidate } from "@/types";
 
 interface AICandidatePanelProps {
-  stepCode: StepCode;
+  stepCode: string;
   candidates: AICandidate[];
   isGenerating: boolean;
   streamContent: string;

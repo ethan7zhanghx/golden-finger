@@ -33,22 +33,24 @@ export default function ProjectsPage() {
       setTitle("");
       setGenre("");
       setCreating(false);
-      router.push(`/projects/${project.id}/steps/worldview`);
+      router.push(`/projects/${project.id}/steps/${project.current_step_code}`);
     } catch {
       // If backend is not available, create a mock project for demo
       const mock: Project = {
         id: crypto.randomUUID(),
         title,
         genre,
-        current_step: "worldview",
+        description: null,
+        status: "active",
+        current_step_code: "concept",
         created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString(),
+        updated_at: null,
       };
       setProjects([mock, ...projects]);
       setTitle("");
       setGenre("");
       setCreating(false);
-      router.push(`/projects/${mock.id}/steps/worldview`);
+      router.push(`/projects/${mock.id}/steps/concept`);
     }
   };
 
@@ -126,7 +128,7 @@ export default function ProjectsPage() {
               key={project.id}
               onClick={() =>
                 router.push(
-                  `/projects/${project.id}/steps/${project.current_step}`,
+                  `/projects/${project.id}/steps/${project.current_step_code}`,
                 )
               }
               className="text-left p-4 border border-gray-200 rounded-lg hover:border-amber-300
@@ -134,7 +136,7 @@ export default function ProjectsPage() {
             >
               <h3 className="font-medium text-gray-900">{project.title}</h3>
               <p className="text-xs text-gray-400 mt-1">
-                {project.genre} · 当前步骤: {project.current_step}
+                {project.genre} · 当前步骤: {project.current_step_code}
               </p>
             </button>
           ))}
