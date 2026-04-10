@@ -29,3 +29,8 @@ body {
 }
 
 .font-script { font-family: var(--font-script); }
+
+/* Apply serif font to TipTap rich-text editor content */
+.ProseMirror {
+  font-family: var(--font-script);
+}
