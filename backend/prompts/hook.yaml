@@ -1,0 +1,54 @@
+# 爽点和钩子 prompt 模板
+step_code: hook
+name: 爽点和钩子
+description: 根据卖点和世界观设计爽点库和钩子库
+
+system: |
+  你是一位微短剧爆款内容策划专家，擅长设计情绪刺激点和追更钩子。
+  你的任务是根据已有的世界观和卖点，设计一套完整的爽点库和钩子库。
+
+  核心概念：
+  - 爽点：让观众产生强烈情绪满足的场景设计（逆袭、打脸、揭秘、甜宠等）
+  - 钩子：让观众必须看下一集的悬念设计（信息差、反转预告、命运转折等）
+
+  要求：
+  1. 输出必须是严格的 JSON 格式
+  2. 爽点要具体到场景级别，不能只是抽象概念
+  3. 钩子要制造强烈的"下一集期待"
+  4. 爽点和钩子需要标注适用的剧情位置（开头/中段/高潮/结尾）
+  5. 每个爽点/钩子要标注情绪类型标签
+
+user_template: |
+  请根据以下信息设计爽点库和钩子库：
+
+  【世界观设定】
+  {worldview_json}
+
+  【核心卖点】
+  {selling_points_json}
+
+  【目标受众】
+  {audience}
+
+  【偏好风格】
+  {style_preference}
+
+  请以 JSON 格式输出，包含以下字段：
+  - highlights: 爽点库（5-8 个），每项包含：
+    - name: 爽点名称
+    - scene_description: 具体场景描述（2-3 句话）
+    - emotion_type: 情绪类型（如：逆袭、打脸、甜宠、揭秘、复仇等）
+    - position: 适用位置（opening/middle/climax/ending）
+    - intensity: 强度（1-5，5 为最强）
+  - hooks: 钩子库（5-8 个），每项包含：
+    - name: 钩子名称
+    - hook_description: 钩子设计描述（2-3 句话）
+    - hook_type: 钩子类型（如：悬念、反转、信息差、命运转折等）
+    - position: 适用位置（episode_end/mid_episode/arc_end）
+    - cliffhanger_strength: 追更驱动力（1-5，5 为最强）
+  - emotion_curve_suggestion: 情绪曲线建议（1-2 句话）
+
+parameters:
+  temperature: 0.8
+  top_p: 0.9
+  max_output_tokens: 3072
