@@ -6,6 +6,8 @@ import { useAIStore } from "@/stores/aiStore";
 import { useSSE } from "./useSSE";
 import type { StepCode } from "@/types";
 
+const EMPTY_CANDIDATES: never[] = [];
+
 interface UseAIGenerateOptions {
   projectId: string;
   stepCode: StepCode;
@@ -27,6 +29,8 @@ export function useAIGenerate({ projectId, stepCode }: UseAIGenerateOptions) {
     finishGeneration,
     failGeneration,
   } = useAIStore();
+
+  const candidates = useAIStore((s) => s.candidates[stepCode] ?? EMPTY_CANDIDATES);
 
   const { consume, abort } = useSSE({
     onStart: (data) => {
@@ -97,6 +101,6 @@ export function useAIGenerate({ projectId, stepCode }: UseAIGenerateOptions) {
     abort,
     isGenerating: generating,
     streamContent: streamBuffer,
-    candidates: useAIStore((s) => s.candidates[stepCode] ?? []),
+    candidates,
   };
 }
