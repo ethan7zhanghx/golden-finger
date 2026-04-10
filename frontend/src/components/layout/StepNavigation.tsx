@@ -15,42 +15,45 @@ export function StepNavigation({ onStepSelect }: StepNavigationProps) {
   const completed = useStepStore((s) => s.completed);
 
   return (
-    <nav className="w-64 shrink-0 border-r border-gray-200 bg-gray-50 overflow-y-auto">
-      <div className="px-4 py-5">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
+    <nav className="w-56 shrink-0 border-r border-[#E8E4DC] bg-[#F7F4EF] overflow-y-auto">
+      <div className="px-3 py-4">
+        <p className="text-[11px] font-semibold text-[#9B8F7E] uppercase tracking-widest mb-3 px-2">
           创作流程
-        </h2>
+        </p>
 
         {PHASES.map((phase) => (
-          <div key={phase.key} className="mb-5">
-            <h3 className="text-xs font-medium text-gray-400 mb-2 px-2">
+          <div key={phase.key} className="mb-4">
+            <p className="text-[10px] font-semibold text-[#9B8F7E] mb-1 px-2 uppercase tracking-wider">
               {phase.label}
-            </h3>
-            <ul className="space-y-0.5">
+            </p>
+            <ul className="space-y-px">
               {getPhaseSteps(phase.key).map((step) => {
                 const isActive = step.code === activeStep;
                 const isDone = completed[step.code];
                 return (
-                  <li key={step.code}>
+                  <li key={step.code} className="relative">
+                    {isActive && (
+                      <span className="absolute left-0 top-[20%] h-[60%] w-0.5 bg-[#C8974A] rounded-r" />
+                    )}
                     <button
                       onClick={() => onStepSelect(step.code)}
                       className={`
-                        w-full flex items-center gap-2 px-3 py-2 text-sm rounded-md transition-colors
+                        w-full flex items-center gap-2 px-2 py-1.5 text-sm rounded-md transition-all
                         ${isActive
-                          ? "bg-amber-50 text-amber-900 font-medium"
-                          : "text-gray-700 hover:bg-gray-100"}
+                          ? "bg-[#F5E6C8] text-[#2D2A26] font-medium"
+                          : "text-[#7C6F5B] hover:bg-[#EDE9E2] hover:text-[#2D2A26]"}
                       `}
                     >
                       {isDone ? (
-                        <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#4A7C59] shrink-0" />
                       ) : (
                         <Circle
-                          className={`w-4 h-4 shrink-0 ${
-                            isActive ? "text-amber-500" : "text-gray-300"
+                          className={`w-3.5 h-3.5 shrink-0 ${
+                            isActive ? "text-[#C8974A]" : "text-[#9B8F7E]"
                           }`}
                         />
                       )}
-                      <span className="truncate">{step.label}</span>
+                      <span className="truncate text-[13px]">{step.label}</span>
                     </button>
                   </li>
                 );

@@ -8,37 +8,28 @@ interface WorkbenchLayoutProps {
   projectId: string;
   onStepSelect: (step: StepCode) => void;
   children: ReactNode;
-  assistantPanel?: ReactNode;
 }
 
 /**
- * Three-column workbench layout:
+ * Two-column workbench layout:
  *   Left  — step navigation (16 steps)
  *   Center — main creation area
- *   Right  — AI assistant / context panel
+ * AI assistant is now a floating FAB handled by StepEditor.
  */
 export function WorkbenchLayout({
   projectId,
   onStepSelect,
   children,
-  assistantPanel,
 }: WorkbenchLayoutProps) {
   return (
-    <div className="flex h-screen bg-white">
+    <div className="flex h-screen bg-[#F0EDE8]">
       {/* Left: Step navigation */}
       <StepNavigation projectId={projectId} onStepSelect={onStepSelect} />
 
-      {/* Center: Main creation area */}
-      <main className="flex-1 overflow-y-auto">
-        <div className="max-w-4xl mx-auto px-6 py-6">{children}</div>
+      {/* Center: Main creation area — full-width, no max-w constraint */}
+      <main className="flex-1 min-w-0 overflow-y-auto bg-[#F0EDE8]">
+        {children}
       </main>
-
-      {/* Right: Assistant panel */}
-      {assistantPanel && (
-        <aside className="w-80 shrink-0 border-l border-gray-200 bg-gray-50 overflow-y-auto">
-          {assistantPanel}
-        </aside>
-      )}
     </div>
   );
 }
