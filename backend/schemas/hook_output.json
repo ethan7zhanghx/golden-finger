@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HookOutput",
+  "description": "爽点和钩子步骤的输出 schema",
+  "type": "object",
+  "required": ["highlights", "hooks", "emotion_curve_suggestion"],
+  "properties": {
+    "highlights": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["name", "scene_description", "emotion_type", "position", "intensity"],
+        "properties": {
+          "name": { "type": "string" },
+          "scene_description": { "type": "string" },
+          "emotion_type": { "type": "string" },
+          "position": {
+            "type": "string",
+            "enum": ["opening", "middle", "climax", "ending"]
+          },
+          "intensity": { "type": "integer", "minimum": 1, "maximum": 5 }
+        },
+        "additionalProperties": false
+      },
+      "description": "爽点库"
+    },
+    "hooks": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["name", "hook_description", "hook_type", "position", "cliffhanger_strength"],
+        "properties": {
+          "name": { "type": "string" },
+          "hook_description": { "type": "string" },
+          "hook_type": { "type": "string" },
+          "position": {
+            "type": "string",
+            "enum": ["episode_end", "mid_episode", "arc_end"]
+          },
+          "cliffhanger_strength": { "type": "integer", "minimum": 1, "maximum": 5 }
+        },
+        "additionalProperties": false
+      },
+      "description": "钩子库"
+    },
+    "emotion_curve_suggestion": {
+      "type": "string",
+      "minLength": 1,
+      "description": "情绪曲线建议"
+    }
+  },
+  "additionalProperties": false
+}

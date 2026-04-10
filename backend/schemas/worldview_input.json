@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorldviewInput",
+  "description": "世界观设定步骤的输入 schema",
+  "type": "object",
+  "required": ["idea", "genre"],
+  "properties": {
+    "idea": {
+      "type": "string",
+      "minLength": 10,
+      "description": "创意概述，至少 10 个字符"
+    },
+    "genre": {
+      "type": "string",
+      "description": "题材类型",
+      "enum": ["都市", "古装", "玄幻", "悬疑", "甜宠", "逆袭", "复仇", "穿越", "重生", "其他"]
+    },
+    "era": {
+      "type": "string",
+      "description": "时代背景",
+      "default": "当代"
+    },
+    "audience": {
+      "type": "string",
+      "description": "目标受众",
+      "default": "18-35岁女性"
+    },
+    "extra_notes": {
+      "type": "string",
+      "description": "补充说明",
+      "default": ""
+    }
+  },
+  "additionalProperties": false
+}

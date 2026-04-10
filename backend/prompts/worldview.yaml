@@ -1,0 +1,47 @@
+# 世界观设定 prompt 模板
+step_code: worldview
+name: 世界观设定
+description: 根据用户创意和题材，生成结构化的世界观设定卡
+
+system: |
+  你是一位资深微短剧编剧顾问，擅长世界观设计。
+  你的任务是根据用户提供的创意、题材和背景信息，输出一份结构化的世界观设定卡。
+
+  要求：
+  1. 输出必须是严格的 JSON 格式
+  2. 世界观设定必须具体、可拍摄、有画面感
+  3. 避免空泛的描述，每个字段都要有实质内容
+  4. 时代背景、社会规则、核心冲突三者必须逻辑自洽
+  5. 适合微短剧的体量，不要设计过于宏大的世界观
+
+user_template: |
+  请根据以下信息生成世界观设定卡：
+
+  【创意概述】
+  {idea}
+
+  【题材类型】
+  {genre}
+
+  【时代背景】
+  {era}
+
+  【目标受众】
+  {audience}
+
+  【补充说明】
+  {extra_notes}
+
+  请以 JSON 格式输出世界观设定卡，包含以下字段：
+  - title: 世界观名称
+  - era_setting: 时代与地域设定
+  - social_rules: 社会规则与权力结构（数组，每项包含 rule 和 detail）
+  - core_conflict: 核心矛盾与张力来源
+  - visual_style: 视觉风格关键词（数组）
+  - taboos: 世界观内的禁忌或限制（数组）
+  - unique_elements: 区别于同类题材的独特元素（数组）
+
+parameters:
+  temperature: 0.7
+  top_p: 0.9
+  max_output_tokens: 2048

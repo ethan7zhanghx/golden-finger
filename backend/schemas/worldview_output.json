@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorldviewOutput",
+  "description": "世界观设定步骤的输出 schema",
+  "type": "object",
+  "required": ["title", "era_setting", "social_rules", "core_conflict", "visual_style", "taboos", "unique_elements"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "世界观名称"
+    },
+    "era_setting": {
+      "type": "string",
+      "minLength": 1,
+      "description": "时代与地域设定"
+    },
+    "social_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["rule", "detail"],
+        "properties": {
+          "rule": { "type": "string" },
+          "detail": { "type": "string" }
+        },
+        "additionalProperties": false
+      },
+      "description": "社会规则与权力结构"
+    },
+    "core_conflict": {
+      "type": "string",
+      "minLength": 1,
+      "description": "核心矛盾与张力来源"
+    },
+    "visual_style": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "视觉风格关键词"
+    },
+    "taboos": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "世界观内的禁忌或限制"
+    },
+    "unique_elements": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "区别于同类题材的独特元素"
+    }
+  },
+  "additionalProperties": false
+}

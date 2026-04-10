@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SellingPointInput",
+  "description": "核心卖点提炼步骤的输入 schema",
+  "type": "object",
+  "required": ["worldview_json", "genre"],
+  "properties": {
+    "worldview_json": {
+      "type": "string",
+      "minLength": 1,
+      "description": "上游世界观设定卡的 JSON 字符串"
+    },
+    "genre": {
+      "type": "string",
+      "description": "题材类型"
+    },
+    "audience": {
+      "type": "string",
+      "description": "目标受众",
+      "default": "18-35岁女性"
+    }
+  },
+  "additionalProperties": false
+}
