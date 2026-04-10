@@ -9,6 +9,7 @@ class ProjectCreate(BaseModel):
     genre: str | None = None
     episode_count: int | None = None
     description: str | None = None
+    current_step: str = "worldview"
 
 
 class ProjectUpdate(BaseModel):
@@ -17,6 +18,7 @@ class ProjectUpdate(BaseModel):
     episode_count: int | None = None
     description: str | None = None
     status: str | None = None
+    current_step: str | None = None
 
 
 class ProjectOut(BaseModel):
@@ -27,6 +29,7 @@ class ProjectOut(BaseModel):
     episode_count: int | None
     description: str | None
     status: str
+    current_step: str
     created_at: datetime
     updated_at: datetime
 

@@ -3,9 +3,11 @@ from __future__ import annotations
 import json
 from collections.abc import AsyncIterator
 
-from fastapi import APIRouter, Response, status
+from fastapi import APIRouter, Depends, Response, status
 from fastapi.responses import StreamingResponse
 
+from backend.app.core.auth import get_current_user
+from backend.app.models.models import User
 from backend.app.schemas.ai import ActionRequest, GenerateRequest, RewriteRequest
 from backend.app.services.ai import WorkflowEngine, build_rewrite_input
 
@@ -19,7 +21,12 @@ async def healthcheck() -> dict[str, str]:
 
 
 @router.post("/projects/{project_id}/steps/{step_code}/generate", tags=["ai"])
-async def generate_step(project_id: str, step_code: str, request: GenerateRequest):
+async def generate_step(
+    project_id: str,
+    step_code: str,
+    request: GenerateRequest,
+    _user: User = Depends(get_current_user),
+):
     if request.stream:
         stream = await workflow_engine.execute_step(
             project_id=project_id,
@@ -42,13 +49,22 @@ async def generate_step(project_id: str, step_code: str, request: GenerateReques
 
 
 @router.post("/projects/{project_id}/steps/{step_code}/rewrite", tags=["ai"])
-async def rewrite_step(project_id: str, step_code: str, request: RewriteRequest):
+async def rewrite_step(
+    project_id: str,
+    step_code: str,
+    request: RewriteRequest,
+    _user: User = Depends(get_current_user),
+):
     generate_request = build_rewrite_input(request)
-    return await generate_step(project_id=project_id, step_code=step_code, request=generate_request)
+    return await generate_step(project_id=project_id, step_code=step_code, request=generate_request, _user=_user)
 
 
 @router.get("/projects/{project_id}/steps/{step_code}/context", tags=["ai"])
-async def get_step_context(project_id: str, step_code: str):
+async def get_step_context(
+    project_id: str,
+    step_code: str,
+    _user: User = Depends(get_current_user),
+):
     return workflow_engine.get_context(project_id=project_id, step_code=step_code)
 
 
@@ -58,18 +74,22 @@ async def get_step_context(project_id: str, step_code: str):
     status_code=status.HTTP_204_NO_CONTENT,
     response_class=Response,
 )
-async def record_tool_run_action(run_id: str, request: ActionRequest) -> Response:
+async def record_tool_run_action(
+    run_id: str,
+    request: ActionRequest,
+    _user: User = Depends(get_current_user),
+) -> Response:
     _ = (run_id, request.action)
     return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
 @router.get("/tool-runs/{run_id}/status", tags=["ai"])
-async def get_tool_run_status(run_id: str):
+async def get_tool_run_status(run_id: str, _user: User = Depends(get_current_user)):
     return workflow_engine.get_tool_run_status(run_id)
 
 
 @router.get("/prompts/{step_code}", tags=["ai"])
-async def get_active_prompt(step_code: str):
+async def get_active_prompt(step_code: str, _user: User = Depends(get_current_user)):
     return workflow_engine.get_prompt(step_code)
 
 
