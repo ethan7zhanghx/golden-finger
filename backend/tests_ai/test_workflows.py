@@ -12,17 +12,17 @@ from unittest.mock import MagicMock, patch
 # 确保项目 src 在 path 上
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from src.ernie_client import ChatResponse, ErnieClient, ErnieConfig
-from src.output_pipeline import (
+from ai.ernie_client import ChatResponse, ErnieClient, ErnieConfig
+from ai.output_pipeline import (
     OutputPipeline,
     extract_json_from_text,
     parse_json_output,
     validate_output,
 )
-from src.workflow_router import WorkflowRouter
-from src.workflows.hook import hook_workflow
-from src.workflows.selling_point import selling_point_workflow
-from src.workflows.worldview import worldview_workflow
+from ai.workflow_router import WorkflowRouter
+from ai.workflows.hook import hook_workflow
+from ai.workflows.selling_point import selling_point_workflow
+from ai.workflows.worldview import worldview_workflow
 
 # ───────────────────── Mock 数据 ─────────────────────
 
