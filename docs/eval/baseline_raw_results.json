@@ -1,0 +1,499 @@
+[
+  {
+    "model": "ernie-5.0",
+    "step": "worldview",
+    "round": 1,
+    "latency_ms": 67278.06210517883,
+    "input_tokens": 363,
+    "output_tokens": 1535,
+    "total_tokens": 1898,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "specificity": 3,
+      "consistency": 0,
+      "uniqueness": 2,
+      "total": 8
+    },
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "selling_point",
+    "round": 1,
+    "latency_ms": 77929.5768737793,
+    "input_tokens": 892,
+    "output_tokens": 2002,
+    "total_tokens": 2894,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "logline_quality": 2,
+      "selling_point_count": 2,
+      "priority_order": 1,
+      "differentiation": 2,
+      "total": 10
+    },
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "hook",
+    "round": 1,
+    "latency_ms": 85013.64827156067,
+    "input_tokens": 1579,
+    "output_tokens": 1960,
+    "total_tokens": 3539,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "highlights_count": 2,
+      "hooks_count": 2,
+      "position_variety": 2,
+      "emotion_curve": 1,
+      "total": 10
+    },
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "worldview",
+    "round": 2,
+    "latency_ms": 117493.83687973022,
+    "input_tokens": 363,
+    "output_tokens": 2841,
+    "total_tokens": 3204,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "specificity": 3,
+      "consistency": 0,
+      "uniqueness": 2,
+      "total": 8
+    },
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "selling_point",
+    "round": 2,
+    "latency_ms": 73379.1151046753,
+    "input_tokens": 1048,
+    "output_tokens": 1913,
+    "total_tokens": 2961,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "logline_quality": 2,
+      "selling_point_count": 2,
+      "priority_order": 1,
+      "differentiation": 2,
+      "total": 10
+    },
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "hook",
+    "round": 2,
+    "latency_ms": 99310.70685386658,
+    "input_tokens": 1797,
+    "output_tokens": 2394,
+    "total_tokens": 4191,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "highlights_count": 2,
+      "hooks_count": 2,
+      "position_variety": 2,
+      "emotion_curve": 1,
+      "total": 10
+    },
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "worldview",
+    "round": 3,
+    "latency_ms": 77049.30686950684,
+    "input_tokens": 363,
+    "output_tokens": 1907,
+    "total_tokens": 2270,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "specificity": 3,
+      "consistency": 0,
+      "uniqueness": 2,
+      "total": 8
+    },
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "selling_point",
+    "round": 3,
+    "latency_ms": 55691.74289703369,
+    "input_tokens": 820,
+    "output_tokens": 1366,
+    "total_tokens": 2186,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "logline_quality": 2,
+      "selling_point_count": 2,
+      "priority_order": 1,
+      "differentiation": 2,
+      "total": 10
+    },
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "hook",
+    "round": 3,
+    "latency_ms": 107744.0619468689,
+    "input_tokens": 1455,
+    "output_tokens": 2620,
+    "total_tokens": 4075,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "highlights_count": 2,
+      "hooks_count": 2,
+      "position_variety": 2,
+      "emotion_curve": 1,
+      "total": 10
+    },
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "worldview",
+    "round": 4,
+    "latency_ms": 60118.62516403198,
+    "input_tokens": 363,
+    "output_tokens": 1287,
+    "total_tokens": 1650,
+    "schema_pass": false,
+    "schema_errors": [
+      "JSON parse failed"
+    ],
+    "rubric_scores": {},
+    "error": null
+  },
+  {
+    "model": "ernie-5.0",
+    "step": "worldview",
+    "round": 5,
+    "latency_ms": 56959.1760635376,
+    "input_tokens": 363,
+    "output_tokens": 1228,
+    "total_tokens": 1591,
+    "schema_pass": false,
+    "schema_errors": [
+      "JSON parse failed"
+    ],
+    "rubric_scores": {},
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "worldview",
+    "round": 1,
+    "latency_ms": 38319.7808265686,
+    "input_tokens": 316,
+    "output_tokens": 945,
+    "total_tokens": 1261,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "specificity": 3,
+      "consistency": 0,
+      "uniqueness": 2,
+      "total": 8
+    },
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "selling_point",
+    "round": 1,
+    "latency_ms": 26648.555994033813,
+    "input_tokens": 1151,
+    "output_tokens": 702,
+    "total_tokens": 1853,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "logline_quality": 2,
+      "selling_point_count": 2,
+      "priority_order": 1,
+      "differentiation": 2,
+      "total": 10
+    },
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "hook",
+    "round": 1,
+    "latency_ms": 66423.42710494995,
+    "input_tokens": 1994,
+    "output_tokens": 1672,
+    "total_tokens": 3666,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "highlights_count": 2,
+      "hooks_count": 2,
+      "position_variety": 2,
+      "emotion_curve": 1,
+      "total": 10
+    },
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "worldview",
+    "round": 2,
+    "latency_ms": 33920.83191871643,
+    "input_tokens": 316,
+    "output_tokens": 815,
+    "total_tokens": 1131,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "specificity": 3,
+      "consistency": 0,
+      "uniqueness": 2,
+      "total": 8
+    },
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "selling_point",
+    "round": 2,
+    "latency_ms": 27494.181871414185,
+    "input_tokens": 1022,
+    "output_tokens": 705,
+    "total_tokens": 1727,
+    "schema_pass": false,
+    "schema_errors": [
+      "JSON parse failed"
+    ],
+    "rubric_scores": {},
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "worldview",
+    "round": 3,
+    "latency_ms": 45046.01001739502,
+    "input_tokens": 316,
+    "output_tokens": 1128,
+    "total_tokens": 1444,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "specificity": 3,
+      "consistency": 0,
+      "uniqueness": 2,
+      "total": 8
+    },
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "selling_point",
+    "round": 3,
+    "latency_ms": 24350.318908691406,
+    "input_tokens": 1334,
+    "output_tokens": 595,
+    "total_tokens": 1929,
+    "schema_pass": false,
+    "schema_errors": [
+      "JSON parse failed"
+    ],
+    "rubric_scores": {},
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "worldview",
+    "round": 4,
+    "latency_ms": 32229.507207870483,
+    "input_tokens": 316,
+    "output_tokens": 757,
+    "total_tokens": 1073,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "specificity": 3,
+      "consistency": 1,
+      "uniqueness": 2,
+      "total": 9
+    },
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "selling_point",
+    "round": 4,
+    "latency_ms": 28115.653038024902,
+    "input_tokens": 963,
+    "output_tokens": 708,
+    "total_tokens": 1671,
+    "schema_pass": false,
+    "schema_errors": [
+      "JSON parse failed"
+    ],
+    "rubric_scores": {},
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "worldview",
+    "round": 5,
+    "latency_ms": 40851.64380073547,
+    "input_tokens": 316,
+    "output_tokens": 1015,
+    "total_tokens": 1331,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "specificity": 3,
+      "consistency": 0,
+      "uniqueness": 2,
+      "total": 8
+    },
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "selling_point",
+    "round": 5,
+    "latency_ms": 29538.928031921387,
+    "input_tokens": 1222,
+    "output_tokens": 750,
+    "total_tokens": 1972,
+    "schema_pass": true,
+    "schema_errors": [],
+    "rubric_scores": {
+      "schema_compliance": 3,
+      "logline_quality": 2,
+      "selling_point_count": 2,
+      "priority_order": 1,
+      "differentiation": 2,
+      "total": 10
+    },
+    "error": null
+  },
+  {
+    "model": "deepseek-v3.2",
+    "step": "hook",
+    "round": 5,
+    "latency_ms": 99797.09482192993,
+    "input_tokens": 2113,
+    "output_tokens": 2512,
+    "total_tokens": 4625,
+    "schema_pass": false,
+    "schema_errors": [
+      "JSON parse failed"
+    ],
+    "rubric_scores": {},
+    "error": null
+  },
+  {
+    "model": "gpt-5.4",
+    "step": "worldview",
+    "round": 1,
+    "latency_ms": 1862.1330261230469,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "schema_pass": false,
+    "schema_errors": [
+      "HTTP Error 403: Forbidden"
+    ],
+    "rubric_scores": {},
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "model": "gpt-5.4",
+    "step": "worldview",
+    "round": 2,
+    "latency_ms": 1054.2571544647217,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "schema_pass": false,
+    "schema_errors": [
+      "HTTP Error 403: Forbidden"
+    ],
+    "rubric_scores": {},
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "model": "gpt-5.4",
+    "step": "worldview",
+    "round": 3,
+    "latency_ms": 1076.8778324127197,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "schema_pass": false,
+    "schema_errors": [
+      "HTTP Error 403: Forbidden"
+    ],
+    "rubric_scores": {},
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "model": "gpt-5.4",
+    "step": "worldview",
+    "round": 4,
+    "latency_ms": 1020.5240249633789,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "schema_pass": false,
+    "schema_errors": [
+      "HTTP Error 403: Forbidden"
+    ],
+    "rubric_scores": {},
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "model": "gpt-5.4",
+    "step": "worldview",
+    "round": 5,
+    "latency_ms": 1079.2560577392578,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "schema_pass": false,
+    "schema_errors": [
+      "HTTP Error 403: Forbidden"
+    ],
+    "rubric_scores": {},
+    "error": "HTTP Error 403: Forbidden"
+  }
+]
