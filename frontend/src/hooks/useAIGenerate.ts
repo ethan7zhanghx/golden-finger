@@ -4,7 +4,10 @@ import { useCallback } from "react";
 import { generateStepStream, recordToolRunAction } from "@/lib/api";
 import { useAIStore } from "@/stores/aiStore";
 import { useSSE } from "./useSSE";
-import type { StepCode } from "@/types";
+import type { AICandidate, StepCode } from "@/types";
+
+// Stable empty array — avoids creating a new reference each render (infinite loop)
+const EMPTY_CANDIDATES: AICandidate[] = [];
 
 interface UseAIGenerateOptions {
   projectId: string;
@@ -97,6 +100,6 @@ export function useAIGenerate({ projectId, stepCode }: UseAIGenerateOptions) {
     abort,
     isGenerating: generating,
     streamContent: streamBuffer,
-    candidates: useAIStore((s) => s.candidates[stepCode] ?? []),
+    candidates: useAIStore((s) => s.candidates[stepCode] ?? EMPTY_CANDIDATES),
   };
 }

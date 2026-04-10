@@ -23,6 +23,7 @@ export function Editor({
   editable = true,
 }: EditorProps) {
   const editor = useEditor({
+    immediatelyRender: false,
     extensions: [
       StarterKit,
       Placeholder.configure({ placeholder }),
@@ -32,7 +33,7 @@ export function Editor({
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm max-w-none focus:outline-none min-h-[300px] px-4 py-3",
+          "prose prose-base max-w-none focus:outline-none min-h-[calc(100vh-16rem)] px-8 py-6 leading-relaxed",
       },
     },
     onUpdate: ({ editor: e }) => {
@@ -55,10 +56,10 @@ export function Editor({
   );
 
   return (
-    <div className="border border-gray-200 rounded-lg bg-white">
-      {/* Minimal toolbar */}
+    <div className="flex flex-col flex-1">
+      {/* Toolbar */}
       {editor && editable && (
-        <div className="flex items-center gap-1 px-3 py-2 border-b border-gray-100">
+        <div className="flex items-center gap-0.5 px-4 py-2 border-b border-gray-100 bg-gray-50/60">
           <ToolbarButton
             active={editor.isActive("bold")}
             onClick={() => editor.chain().focus().toggleBold().run()}
@@ -71,19 +72,35 @@ export function Editor({
             label="I"
             className="italic"
           />
+          <div className="w-px h-4 bg-gray-200 mx-1" />
+          <ToolbarButton
+            active={editor.isActive("heading", { level: 1 })}
+            onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+            label="H1"
+            className="text-xs"
+          />
+          <ToolbarButton
+            active={editor.isActive("heading", { level: 2 })}
+            onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+            label="H2"
+            className="text-xs"
+          />
+          <div className="w-px h-4 bg-gray-200 mx-1" />
           <ToolbarButton
             active={editor.isActive("bulletList")}
             onClick={() => editor.chain().focus().toggleBulletList().run()}
-            label="•"
+            label="• 列表"
+            className="text-xs"
           />
           <ToolbarButton
             active={editor.isActive("orderedList")}
             onClick={() => editor.chain().focus().toggleOrderedList().run()}
-            label="1."
+            label="1. 编号"
+            className="text-xs"
           />
         </div>
       )}
-      <EditorContent editor={editor} />
+      <EditorContent editor={editor} className="flex-1" />
     </div>
   );
 }

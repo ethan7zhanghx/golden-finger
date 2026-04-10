@@ -60,40 +60,47 @@ export function StepEditor({ projectId, stepCode }: StepEditorProps) {
   }, [generate, stepCode, asset]);
 
   return (
-    <div className="flex gap-0 h-full">
-      {/* Center: Editor area */}
-      <div className="flex-1 min-w-0">
-        <div className="mb-4">
-          <h1 className="text-xl font-bold text-gray-900">{meta.label}</h1>
-          <p className="text-sm text-gray-500 mt-1">
+    <div className="flex min-h-[calc(100vh-3rem)]">
+      {/* Center: Writing area — fills all available space */}
+      <div className="flex-1 min-w-0 flex flex-col px-10 py-8">
+        {/* Step header */}
+        <div className="mb-5 flex items-baseline gap-3">
+          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+            {meta.label}
+          </h1>
+          <span className="text-sm text-gray-400">
             {meta.phaseLabel} · {formTypeLabel(meta.formType)}
-          </p>
+          </span>
         </div>
 
-        {meta.formType === "richtext" ? (
-          <Editor
-            content={asset?.content ?? ""}
-            onChange={handleContentChange}
-            placeholder={`在此编写${meta.label}内容…`}
-          />
-        ) : (
-          /* For non-richtext steps, use a simple textarea */
-          <textarea
-            className="w-full min-h-[300px] p-4 border border-gray-200 rounded-lg
-              text-sm leading-relaxed resize-y focus:outline-none focus:ring-2
-              focus:ring-amber-200 focus:border-amber-300"
-            placeholder={`在此编写${meta.label}内容…`}
-            value={asset?.content ?? ""}
-            onChange={(e) => handleContentChange(e.target.value)}
-          />
-        )}
+        {/* Paper card — mimics a professional writing surface */}
+        <div className="flex-1 flex flex-col bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          {meta.formType === "richtext" ? (
+            <Editor
+              content={asset?.content ?? ""}
+              onChange={handleContentChange}
+              placeholder={`在此编写${meta.label}内容…`}
+            />
+          ) : (
+            <textarea
+              className="flex-1 w-full min-h-[calc(100vh-16rem)] p-8 text-base
+                leading-relaxed resize-none focus:outline-none bg-transparent
+                placeholder:text-gray-300"
+              placeholder={`在此编写${meta.label}内容…`}
+              value={asset?.content ?? ""}
+              onChange={(e) => handleContentChange(e.target.value)}
+            />
+          )}
+        </div>
 
-        {/* Save status indicator */}
-        <SaveIndicator stepCode={stepCode} />
+        {/* Save status */}
+        <div className="mt-2">
+          <SaveIndicator stepCode={stepCode} />
+        </div>
       </div>
 
-      {/* Right: AI panel (inline for now) */}
-      <div className="w-80 shrink-0 border-l border-gray-200 ml-6 -mr-6">
+      {/* Right: AI assistant panel */}
+      <div className="w-72 shrink-0 border-l border-gray-200 bg-white overflow-y-auto">
         <AICandidatePanel
           stepCode={stepCode}
           candidates={candidates}

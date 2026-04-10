@@ -24,13 +24,13 @@ export function WorkbenchLayout({
   assistantPanel,
 }: WorkbenchLayoutProps) {
   return (
-    <div className="flex h-screen bg-white">
+    <div className="flex h-screen bg-gray-50">
       {/* Left: Step navigation */}
       <StepNavigation projectId={projectId} onStepSelect={onStepSelect} />
 
-      {/* Center: Main creation area */}
-      <main className="flex-1 overflow-y-auto">
-        <div className="max-w-4xl mx-auto px-6 py-6">{children}</div>
+      {/* Center: Main creation area — full-width, no max-w constraint */}
+      <main className="flex-1 min-w-0 overflow-y-auto bg-gray-50">
+        {children}
       </main>
 
       {/* Right: Assistant panel */}
