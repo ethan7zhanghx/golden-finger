@@ -33,6 +33,22 @@ export interface StepMeta {
   formType: "form" | "card" | "outline" | "richtext" | "analysis";
 }
 
+// ── Auth ──────────────────────────────────────
+
+export interface AuthToken {
+  access_token: string;
+}
+
+export interface UserRegisterInput {
+  email: string;
+  password: string;
+}
+
+export interface UserLoginInput {
+  email: string;
+  password: string;
+}
+
 // ── Project ───────────────────────────────────
 
 export interface Project {

@@ -1,5 +1,6 @@
 import ky from "ky";
 import type {
+  AuthToken,
   ContextResponse,
   GenerateRequest,
   Project,
@@ -8,6 +9,8 @@ import type {
   StepCode,
   StepResult,
   ToolRunStatus,
+  UserLoginInput,
+  UserRegisterInput,
 } from "@/types";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8000";
@@ -62,6 +65,24 @@ function assetOutToStepAsset(raw: AssetOut): StepAsset {
   };
 }
 
+// ── Auth ──────────────────────────────────────
+
+export async function register(input: UserRegisterInput): Promise<void> {
+  await api.post("api/auth/register", { json: input });
+}
+
+export async function login(input: UserLoginInput): Promise<AuthToken> {
+  const token = await api
+    .post("api/auth/login", { json: input })
+    .json<AuthToken>();
+  localStorage.setItem("token", token.access_token);
+  return token;
+}
+
+export function logout(): void {
+  localStorage.removeItem("token");
+}
+
 // ── Project CRUD ──────────────────────────────
 
 export async function listProjects(): Promise<Project[]> {
@@ -76,6 +97,13 @@ export async function createProject(
   input: ProjectCreateInput,
 ): Promise<Project> {
   return api.post("api/projects", { json: input }).json<Project>();
+}
+
+export async function updateProject(
+  id: string,
+  input: Partial<ProjectCreateInput & { status?: string; current_step?: StepCode }>,
+): Promise<Project> {
+  return api.put(`api/projects/${id}`, { json: input }).json<Project>();
 }
 
 export async function deleteProject(id: string): Promise<void> {
