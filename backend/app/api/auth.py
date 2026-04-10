@@ -6,7 +6,7 @@ from backend.app.core.database import get_db
 from backend.app.models.models import User
 from backend.app.schemas.project import AuthLogin, AuthRegister, TokenOut, UserOut
 
-router = APIRouter(prefix="/api/v1/auth", tags=["auth"])
+router = APIRouter(prefix="/api/auth", tags=["auth"])
 
 
 @router.post("/register", response_model=UserOut, status_code=status.HTTP_201_CREATED)

@@ -37,9 +37,13 @@ export interface StepMeta {
 
 export interface Project {
   id: string;
+  owner_id?: string;
   title: string;
   genre: string;
-  current_step: StepCode;
+  episode_count?: number;
+  description?: string;
+  status?: string;
+  current_step?: StepCode;
   created_at: string;
   updated_at: string;
 }

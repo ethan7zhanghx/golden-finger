@@ -16,10 +16,14 @@ export default function ProjectsPage() {
   const [genre, setGenre] = useState("");
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.replace("/login");
+      return;
+    }
     listProjects()
       .then(setProjects)
       .catch(() => {
-        // Backend not ready — show empty state
         setProjects([]);
       })
       .finally(() => setLoading(false));
@@ -126,7 +130,7 @@ export default function ProjectsPage() {
               key={project.id}
               onClick={() =>
                 router.push(
-                  `/projects/${project.id}/steps/${project.current_step}`,
+                  `/projects/${project.id}/steps/${project.current_step ?? "worldview"}`,
                 )
               }
               className="text-left p-4 border border-gray-200 rounded-lg hover:border-amber-300
@@ -134,7 +138,7 @@ export default function ProjectsPage() {
             >
               <h3 className="font-medium text-gray-900">{project.title}</h3>
               <p className="text-xs text-gray-400 mt-1">
-                {project.genre} · 当前步骤: {project.current_step}
+                {project.genre || "未分类"} · {project.status ?? "draft"}
               </p>
             </button>
           ))}
