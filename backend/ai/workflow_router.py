@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """WorkflowRouter
 
 根据 step_code 路由到对应的 workflow 函数。
