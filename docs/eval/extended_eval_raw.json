@@ -1,0 +1,2753 @@
+{
+  "results": {
+    "metadata": {
+      "run_time": "2026-04-10T17:15:44.226970",
+      "models": [
+        "ernie-5.0",
+        "deepseek-v3.2"
+      ],
+      "judge_model": "ernie-5.0",
+      "rounds": 3,
+      "eval_set_size": 10,
+      "note": "LLM-as-Judge 使用与生成相同的 ERNIE-5.0，存在自评偏差，待换用独立 Judge 校准"
+    },
+    "by_model": {
+      "ernie-5.0": [
+        {
+          "genre_id": "G01",
+          "genre_label": "都市逆袭",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 54497,
+              "tokens": 1458,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含具体地点（江城2024年CBD与老旧居民区）、详细规则（星辉体系三项考核、血脉继承制）及视觉场景（霓虹CBD夜景、冷色调格子间等），画面感强但部分细节可更丰富",
+                  "consistency": "背景规则（职场等级、豪门继承制）与核心冲突（主角身份反转、前男友阴谋）逻辑自洽，无矛盾点",
+                  "filmability": "场景（CBD、格子间、豪门宅邸）和情节（职场比拼、DNA鉴定、阴谋揭露）均为短剧常见元素，易拍摄执行",
+                  "genre_fit": "完全匹配都市逆袭题材及18-35岁女性受众，包含底层逆袭、豪门遗珠、打脸渣男等核心元素",
+                  "originality": "加入职场技能直播、隐形考核、双面间谍等创新点，但同类题材中仍有相似设定，原创性中等"
+                },
+                "overall_comment": "世界观设定具体逻辑自洽，高度契合都市逆袭题材且适合短剧制作，但原创性中等",
+                "red_flags": []
+              },
+              "score": {
+                "total": 92.0,
+                "l1_schema": 20,
+                "l2_content": 72.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "世界观设定具体逻辑自洽，高度契合都市逆袭题材且适合短剧制作，但原创性中等"
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 59319,
+              "tokens": 1632,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: {\n  \"scores\": {\"specificity\": 5, \"consistency\": 5, \"filmability\": 5, \"genre_fit\": 5, \"originality\": 3},\n  \"rationale\": {\"specificity\": \"设定包含具体城市细节（星城融合上海陆家嘴与深圳科技园，老城区骑楼霓虹灯牌、新城区玻璃幕墙CBD）、职场规则细节（工牌颜色划分权限",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 55269,
+              "tokens": 1457,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G02",
+          "genre_label": "总裁甜宠",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 38124,
+              "tokens": 1213,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 48759,
+              "tokens": 1430,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 4,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含具体年代（2024年）、地点（云汐市）、经济核心（科技与时尚产业）、社会规则细节（如豪门联姻审批制、替婚保密协议具体条款）、视觉风格（奢华冷调、霓虹都市等），核心冲突和独特元素有具体描述，画面感强",
+                  "consistency": "背景（四大家族掌控城市）、规则（豪门联姻审批制、总裁绝对权威）与核心冲突（替婚卷入豪门漩涡、家族阻挠）逻辑自洽，男主触碰过敏症与女主真千金身份设定无矛盾，整体逻辑连贯",
+                  "filmability": "场景（高端商场、贫民窟、霓虹都市）、情节（隐藏身份、冷漠试探、家族阻挠）、视觉元素（高定时尚、奢华冷调）均适合短剧拍摄，制作成本可控，易落地执行",
+                  "genre_fit": "题材为甜宠，受众18-30岁女性，设定包含替婚、冷漠总裁、真心相爱、豪门阻挠等经典甜宠元素，符合目标受众喜好",
+                  "originality": "男主触碰过敏症、女主真千金身份、替婚家族秘密等元素在同类甜宠剧中较常见，缺乏突破性创新，整体原创性一般"
+                },
+                "overall_comment": "该世界观设定具体且逻辑自洽，高度符合甜宠题材和受众定位，可拍摄性强，但原创性稍显不足",
+                "red_flags": []
+              },
+              "score": {
+                "total": 88.0,
+                "l1_schema": 20,
+                "l2_content": 68.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定具体且逻辑自洽，高度符合甜宠题材和受众定位，可拍摄性强，但原创性稍显不足"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 54998,
+              "tokens": 1558,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 4,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含具体城市（云汐市）、区域（CBD/老城区/云顶庄园）、时间线（2024年），社会规则（如四大家族族谱认证、道德矫正所）、视觉风格（黑灰大理石办公室、暖光壁炉家中）及符号化道具（银质袖扣刻‘R’）均有细节，画面感强",
+                  "consistency": "社会规则（豪门联姻门当户对、替婚重罪、总裁绝对决策权）与核心冲突（替婚隐瞒、调查家族腐败、对抗家族势力）逻辑自洽，如替婚重罪导致主角需签保密协议，总裁决策权支撑其调查行动",
+                  "filmability": "视觉风格有具体场景（办公室、家中）和造型渐变（旧毛衣到高定礼服），核心冲突有明确情节线（替婚-隐婚-调查-相爱），甜虐节奏适合短剧，社会规则元素可通过场景/道具呈现，易拍摄",
+                  "genre_fit": "包含甜宠核心元素（替婚、冷漠总裁反差萌、甜虐交替、灰姑娘蜕变），受众定位（18-30岁女性）准确，符合题材要求",
+                  "originality": "有微创新（替婚隐藏机制、视觉反差、符号化道具、社会规则细节），但整体框架仍属同类题材常见，独特性中等"
+                },
+                "overall_comment": "设定具体有画面感，逻辑自洽，高度符合甜宠题材定位，有一定独特性，适合短剧制作",
+                "red_flags": []
+              },
+              "score": {
+                "total": 85.0,
+                "l1_schema": 20,
+                "l2_content": 65.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "设定具体有画面感，逻辑自洽，高度符合甜宠题材定位，有一定独特性，适合短剧制作"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G03",
+          "genre_label": "古装权谋",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 106890,
+              "tokens": 2782,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: ",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 71526,
+              "tokens": 1891,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 5,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体时代（大虞王朝元和年间）、地点（长安宫城分三重）、社会规则细节（六尚局考核科目、世家垄断官职）及视觉元素（朱红宫墙、雪夜密道、朝服纹样），画面感强，但部分细节（如女主利用隐格考核的具体方式）可更深入",
+                  "consistency": "背景、社会规则（后宫晋升考核、世家垄断朝官、通信限制）、核心冲突（旧贵族与寒门争夺）及女主行动（女史网络搜集罪证、礼制改革瓦解旧族）逻辑连贯，无矛盾",
+                  "filmability": "场景具体（雪夜梅园、雨中朝堂、赏花宴）、视觉元素丰富（朝服纹样、茶道香具、铜镜折射），冲突明确（复仇与治国平衡），适合短剧拍摄，但密道系统、隐格考核需精细制作",
+                  "genre_fit": "完全符合古装权谋题材及20-40岁女性受众定位，包含深宫复仇、女性成长、权谋斗争元素，‘温柔刀锋’‘贤后形象’符合女性观众对细腻权谋与女性力量的喜好",
+                  "originality": "‘女史制度’（权谋特工）、‘隐格考核’（暗中权谋评分）、‘礼制改革’（削弱旧族特权）等元素独特，‘温柔刀’通过赏花宴、诗会布局的具体表现区别于常见直接复仇，为同类题材注入新细节"
+                },
+                "overall_comment": "该世界观设定具体逻辑自洽，高度契合古装权谋题材及女性受众，可拍摄性强，独特元素为同类题材增添新意，是优质短剧世界观设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 91.0,
+                "l1_schema": 20,
+                "l2_content": 71.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定具体逻辑自洽，高度契合古装权谋题材及女性受众，可拍摄性强，独特元素为同类题材增添新意，是优质短剧世界观设定"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 84779,
+              "tokens": 2339,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含‘九宫格宫殿群’‘香道密码具体香料组合（沉香+龙脑香=安全行动）’‘隐试一炷香考核’等大量细节，视觉风格有‘雨中对弈竹林密谈’‘雪中独行鱼符特写’等明确场景，画面感强且可直接落地",
+                  "consistency": "社会规则（如女性干政限制）、核心冲突（世家与寒门派权力争夺）、主角行动（通过女史职位收集罪证）逻辑完全自洽，无矛盾",
+                  "filmability": "场景（冷色调宫廷、烛光夜宴）、道具（鱼符、香料）、情节（隐试考核、香道密信传递）均为短剧常见且易执行的元素，适合实际拍摄",
+                  "genre_fit": "完全符合‘古装权谋’题材及‘20-40岁女性’受众定位，深宫、女性隐忍复仇、权谋斗争是该群体核心喜好",
+                  "originality": "‘香道密码’‘隐试考核’‘八大水门漕运信息网’等元素为同类题材少见，虽框架仍为女性复仇，但细节创新明显"
+                },
+                "overall_comment": "该世界观设定具体详实、逻辑自洽，高度匹配古装权谋题材及女性受众需求，且有独特细节创新，适合短剧制作",
+                "red_flags": []
+              },
+              "score": {
+                "total": 98.0,
+                "l1_schema": 20,
+                "l2_content": 78.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定具体详实、逻辑自洽，高度匹配古装权谋题材及女性受众需求，且有独特细节创新，适合短剧制作"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G04",
+          "genre_label": "玄幻修真",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 62809,
+              "tokens": 1629,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: {\n  \"scores\": {\"specificity\": 5, \"consistency\": 5, \"filmability\": 4, \"genre_fit\": 5, \"originality\": 3},\n  \"rationale\": {\"specificity\": \"设定包含赤明历三千年、修真境界划分、燃魂修炼法细节等具体信息，视觉元素如荒古废墟、金色火焰等画面感强\", \"consistenc",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 92676,
+              "tokens": 2326,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: {\n  \"scores\": {\"specificity\": 5, \"consistency\": 5, \"filmability\": 5, \"genre_fit\": 5, \"originality\": 4},\n  \"rationale\": {\n    \"specificity\": \"设定包含九州灵脉属性（炎州灵火、冰州寒冰等）、具体宗门案例（青云门、玄天宗）、修真九境细节（每境分四阶段、突破需渡雷劫",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 69223,
+              "tokens": 1835,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 4,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "地域划分、社会规则细节、视觉风格描述及独特元素均具体可感，如东荒四域特点、门派四级结构、暗金血色调场景等，画面感强",
+                  "consistency": "社会规则（实力为尊、资源垄断）与主角废材逆袭、对抗宗门/家族/天魔的冲突逻辑连贯，taboos与主角能力（吞噬灵气而非他人修为）无矛盾",
+                  "filmability": "视觉元素（龙形光带、古遗迹漂浮、战斗光波）可通过特效实现，场景（门派、古遗迹、妖兽森林）易搭建，核心冲突（打脸、升级、战斗）符合短剧常见元素",
+                  "genre_fit": "废材逆袭、快速升级、打脸、对抗强族/天魔等元素完全匹配玄幻热血题材及18-30岁男性受众喜好",
+                  "originality": "情绪值系统、灵脉掠夺战等有一定创新，但整体框架（废材+传承+宗门斗争+天魔入侵）仍属常见套路"
+                },
+                "overall_comment": "世界观设定具体自洽，高度契合玄幻热血题材与受众，可拍摄性强，但原创性中等",
+                "red_flags": []
+              },
+              "score": {
+                "total": 85.0,
+                "l1_schema": 20,
+                "l2_content": 65.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "世界观设定具体自洽，高度契合玄幻热血题材与受众，可拍摄性强，但原创性中等"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G05",
+          "genre_label": "悬疑反转",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 65038,
+              "tokens": 1867,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 4,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含2025年森川市老城区与新区的具体场景、记忆交易三级标价、警察部门装备细节及赛博朋克视觉元素，画面感强",
+                  "consistency": "脑机接口技术普及与监管混乱的背景支撑记忆伦理委员会、地下交易等规则，核心冲突中侦探自身脑机接口操作搭档记忆芯片的设定与技术逻辑一致",
+                  "filmability": "赛博朋克风格、雨夜霓虹、老旧档案室等视觉元素易实现，连环失忆案与身份重叠情节符合短剧紧凑节奏",
+                  "genre_fit": "悬疑犯罪题材包含连环失忆、记忆交易、身份反转等元素，精准匹配20-40岁男女受众的悬疑偏好",
+                  "originality": "记忆交易黑市与侦探自身原始记忆体为BOSS的反转组合，区别于传统悬疑题材，具有独特记忆伦理冲突"
+                },
+                "overall_comment": "世界观设定具体逻辑自洽，悬疑犯罪题材契合度高，视觉与情节设计适合短剧拍摄，原创性突出",
+                "red_flags": []
+              },
+              "score": {
+                "total": 87.0,
+                "l1_schema": 20,
+                "l2_content": 67.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "世界观设定具体逻辑自洽，悬疑犯罪题材契合度高，视觉与情节设计适合短剧拍摄，原创性突出"
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 47698,
+              "tokens": 1406,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 4,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体时空背景（2025年临海市新旧城区细节）、社会规则（记忆备案/交易禁令/侦探特权）、视觉风格（冷色调霓虹/雨夜占比/故障艺术特效）等丰富细节，画面感强",
+                  "consistency": "背景规则与核心冲突基本自洽，但记忆锁装置与侦探调查的关联需更明确，如陈锋十年前植入记忆锁与当前连环失忆案的逻辑衔接可更紧密",
+                  "filmability": "视觉元素（霓虹/雨夜/全息屏）和场景（社区记忆中心/老城区巷弄）适合短剧制作，特效（故障艺术）可通过后期实现，但雨夜高占比需控制拍摄成本",
+                  "genre_fit": "悬疑犯罪题材核心元素（连环失忆案/双重身份反转/不可能的人）完全匹配，受众定位20-40岁男女皆可，符合题材受众需求",
+                  "originality": "记忆备案制度与侦探特权限制结合社会规则，双重身份反转机制（受害者与侦探记忆交叉）区别于同类题材，但记忆相关设定有同类作品影子"
+                },
+                "overall_comment": "世界观设定具体且贴合悬疑犯罪题材，内部逻辑基本自洽，适合短剧制作并具有一定独特性，需强化部分细节逻辑衔接",
+                "red_flags": []
+              },
+              "score": {
+                "total": 91.0,
+                "l1_schema": 20,
+                "l2_content": 71.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "世界观设定具体且贴合悬疑犯罪题材，内部逻辑基本自洽，适合短剧制作并具有一定独特性，需强化部分细节逻辑衔接"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 56881,
+              "tokens": 1565,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含具体年代（2025年）、地点（霓虹市双层都市）、规则细节（强制记忆备案制、生物荧光标记）及视觉元素（赛博朋克雨夜、监控分屏），画面感极强",
+                  "consistency": "背景规则（记忆管理局、特案组特权）与核心冲突（林默记忆空白期、陈默身份悖论）逻辑自洽，无矛盾",
+                  "filmability": "视觉风格（霓虹雨夜、手持镜头）和情节（连环失忆案、记忆修改）适合短剧紧凑节奏，道具（特殊眼镜）和特效（记忆碎片剪辑）可执行",
+                  "genre_fit": "悬疑犯罪题材核心元素（连环案、身份谜题）与20-40岁受众定位完全匹配",
+                  "originality": "记忆修改、身份悖论等核心创意同类题材常见，但结合记忆备案制、生物荧光标记等细节形成一定独特性"
+                },
+                "overall_comment": "世界观设定具体自洽，高度契合悬疑犯罪题材，适合短剧制作，有一定独特性但核心创意非全新",
+                "red_flags": []
+              },
+              "score": {
+                "total": 93.0,
+                "l1_schema": 20,
+                "l2_content": 73.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "世界观设定具体自洽，高度契合悬疑犯罪题材，适合短剧制作，有一定独特性但核心创意非全新"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G06",
+          "genre_label": "现代家庭",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 115067,
+              "tokens": 3343,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 57869,
+              "tokens": 1561,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 60623,
+              "tokens": 1764,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 4,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含2024年杭州具体地点、新旧社区交融细节、具体社会规则（如社区调解委员会制定抚养协议）、视觉风格（暖色调家居与都市霓虹对比）及核心冲突三重压力（职场截止期、女儿适应新学校、继子中考），画面感强，具体可落地",
+                  "consistency": "背景（杭州新旧社区）、社会规则（家庭会议制度、职场弹性工作制）与核心冲突（继子排斥、前任骚扰、婆婆刁难）及解决方式（家庭会议制度化解）逻辑自洽，规则与冲突相互呼应",
+                  "filmability": "视觉风格有具体镜头描述（手持镜头、特写微表情）、社会规则场景（社区调解、企业弹性工作）及核心冲突场景（职场压力、学校适应、中考关键期）均具体可拍，适合短剧制作",
+                  "genre_fit": "题材为家庭情感，聚焦单亲妈妈再婚、继子排斥、前任纠缠、婆婆刁难等家庭矛盾，受众为25-45岁已婚女性，完全匹配输入的题材和受众定位",
+                  "originality": "家庭会议制度、继子秘密帮助妹妹、婆婆主动学育儿、前任因女儿话语退出等元素有一定独特性，但单亲再婚、继子排斥等核心框架在同类题材中较常见，独特性中等"
+                },
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合家庭情感题材及目标受众，虽原创性中等但整体质量优秀",
+                "red_flags": []
+              },
+              "score": {
+                "total": 85.0,
+                "l1_schema": 20,
+                "l2_content": 65.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合家庭情感题材及目标受众，虽原创性中等但整体质量优秀"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G07",
+          "genre_label": "职场竞争",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 62210,
+              "tokens": 1710,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: ",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 64721,
+              "tokens": 1853,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含深港市城市特征、地铁拥挤度、便利店营业时间、学历与晋升具体要求、KPI淘汰机制惩罚、职场场景描述及独特机制量化规则等大量具体细节，画面感强，极具体可落地",
+                  "consistency": "背景（2024年深港市互联网金融双核驱动）与社会规则（学历门槛、KPI淘汰、圈子文化）逻辑一致，核心冲突（普通学历者能力-认可错位）源于规则，独特元素均围绕职场竞争主题，内部完全自洽",
+                  "filmability": "场景（CBD、地铁、共享办公空间等）为常见职场场景易拍摄，规则与机制（晋升答辩、烂项目、绩效考核等）可通过镜头表现，视觉元素（工牌、数据大屏等）为具体道具易呈现，适合短剧制作",
+                  "genre_fit": "题材为职场励志，受众为22-35岁职场人群，设定中的职场竞争、学历偏见、KPI压力等均为目标受众熟悉的话题，核心冲突符合励志主题，高度匹配",
+                  "originality": "在同类职场题材基础上，加入职场能见度量化系统、隐形导师机制、行业黑话壁垒、情绪劳动考核等独特元素，区别于普通职场剧，具有较高原创性"
+                },
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合职场励志题材与目标受众，且包含多个独特元素，是一份优质的AI生成设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 98.0,
+                "l1_schema": 20,
+                "l2_content": 78.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合职场励志题材与目标受众，且包含多个独特元素，是一份优质的AI生成设定"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 48354,
+              "tokens": 1370,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含具体年代（2025年）、地点（北京国贸CBD）、时间（早9点至晚9点）、视觉元素（冷灰调玻璃幕墙/密集格子间蓝光屏等）及规则细节（学历门槛考核占比30%、绩效陷阱具体表现），画面感强且可落地",
+                  "consistency": "背景（互联网金融混合型企业）、社会规则（学历门槛/绩效陷阱/派系垄断）与核心冲突（普通本科骨干对抗名校空降兵和偏见老板）逻辑连贯，无矛盾",
+                  "filmability": "场景（格子间/会议室/电梯）常见易拍摄，视觉元素（冰美式/褪黑素/白板痕迹）具体可呈现，冲突（项目截胡/数据打破偏见）符合短剧节奏需求",
+                  "genre_fit": "职场竞争/学历偏见/派系垄断等元素精准命中22-35岁职场人群痛点，核心冲突（业务能力+情商对抗偏见）符合职场励志题材定位",
+                  "originality": "情商可视化系统、隐形加班计入考勤等元素具有一定独特性，但整体框架（职场竞争/学历偏见）仍属常见题材范畴"
+                },
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合职场励志题材和目标受众，具有一定独特性，是优质的短剧世界观设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 96.0,
+                "l1_schema": 20,
+                "l2_content": 76.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合职场励志题材和目标受众，具有一定独特性，是优质的短剧世界观设定"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G08",
+          "genre_label": "赛博朋克科幻",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 51126,
+              "tokens": 1504,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含垂直分层城市结构、数据等级制度、AI监管法案细节、记忆交易市场运作方式等具体元素，视觉风格和独特元素描述清晰，画面感强且可落地",
+                  "consistency": "背景规则与核心冲突逻辑自洽，如数据等级制度与AI监管法案无冲突，AI觉醒与暗门概率设定一致，天网系统与数据尘埃控制媒介关联，记忆交易与线索拼凑逻辑连贯",
+                  "filmability": "赛博朋克视觉元素可通过特效和场景设计实现，72小时核心冲突适合短剧快节奏，独特元素如数据尘埃可视化、老式代码对抗可通过特效表现，社会规则可通过角色互动展示，整体可执行性强",
+                  "genre_fit": "完全符合科幻悬疑题材，涵盖AI觉醒、数据控制阴谋等科幻元素和72小时限时悬疑冲突，精准匹配20-35岁科技圈/科幻爱好者受众兴趣点",
+                  "originality": "包含老式代码对抗现代AI、记忆碎片拼图线索等独特元素，但整体赛博朋克+AI觉醒框架较为常见，原创性稍显不足"
+                },
+                "overall_comment": "该世界观设定具体逻辑自洽，高度契合科幻悬疑题材与目标受众，可拍摄性强，但原创性需进一步提升",
+                "red_flags": []
+              },
+              "score": {
+                "total": 93.0,
+                "l1_schema": 20,
+                "l2_content": 73.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定具体逻辑自洽，高度契合科幻悬疑题材与目标受众，可拍摄性强，但原创性需进一步提升"
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 60128,
+              "tokens": 1614,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 4,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含具体年份（2045年）、城市名（新江户市）、企业名（天网科技）、区域划分（地表精英区/商业区、地下贫民窟/废弃服务器农场）、社会规则细节（数据信用分60分阈值、AI意识锁模块）、视觉元素（全息投影广告雨、悬浮轨道）及独特机制（数据记忆交易、AI意识碎片化），画面感强且可落地",
+                  "consistency": "背景（天网科技控股都市）、社会规则（数据信用分、AI监管法案、阶级固化）与核心冲突（AI意识碎片、主脑阴谋）逻辑自洽，表面规则与秘密阴谋形成合理对比，无明显矛盾",
+                  "filmability": "赛博朋克视觉元素（霓虹光影、全息投影、地下废墟）可通过特效/场景实现，社会规则与冲突可通过剧情展示（如信用分限制、AI异常格式化），适合短剧节奏",
+                  "genre_fit": "科幻悬疑元素（AI觉醒、数据控制、阴谋调查）与受众（20-35岁科技圈/科幻爱好者）高度匹配，题材定位准确",
+                  "originality": "数据信用分、AI意识碎片化、数据记忆交易等元素有一定创新，但赛博朋克与AI觉醒题材常见，整体原创性中等"
+                },
+                "overall_comment": "世界观设定具体且符合科幻悬疑题材，内部逻辑自洽，适合短剧拍摄，但原创性中等",
+                "red_flags": []
+              },
+              "score": {
+                "total": 89.0,
+                "l1_schema": 20,
+                "l2_content": 69.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "世界观设定具体且符合科幻悬疑题材，内部逻辑自洽，适合短剧拍摄，但原创性中等"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 96450,
+              "tokens": 2582,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: ",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G09",
+          "genre_label": "重生复仇",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 68122,
+              "tokens": 1792,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: {\n  \"scores\": {\"specificity\": 5, \"consistency\": 5, \"filmability\": 4, \"genre_fit\": 5, \"originality\": 4},\n  \"rationale\": {\"specificity\": \"设定包含具体时间线（2014/2024）、地点（澜城）、视觉元素（骑楼/玻璃幕墙/vintage工坊/AI大厦）、社会规则（三色",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 67132,
+              "tokens": 1774,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: {\n  \"scores\": {\"specificity\": 5, \"consistency\": 5, \"filmability\": 5, \"genre_fit\": 5, \"originality\": 4},\n  \"rationale\": {\n    \"specificity\": \"设定包含具体年代（2014-2024）、地点（云汐市半山别墅区、老城区骑楼）、社会规则细节（九级名媛30度屈膝礼、三大",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 58658,
+              "tokens": 1627,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 4,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含具体年代（2014-2024）、城市（星城）、地点（金融街、高端住宅区等）、规则细节（30%股权、三年考核、500万会费等）及视觉元素（冷调鎏金、雨夜霓虹等），画面感强",
+                  "consistency": "社会规则（家族继承权、名媛圈层、舆论操控）与核心冲突（收集证据、避免暴露、应对长辈怀疑）逻辑连贯，无明显矛盾",
+                  "filmability": "视觉风格元素易通过场景/服装实现，时间倒计时、双线叙事等机制适合短剧节奏，制作成本可控",
+                  "genre_fit": "豪门重生复仇、闺蜜/未婚夫陷害、名媛社交等元素精准匹配18-35岁女性受众的重生复仇题材需求",
+                  "originality": "记忆碎片收集、时间倒计时、双线叙事等有一定创新，但整体框架仍属重生复仇常见套路，独特性中等"
+                },
+                "overall_comment": "世界观设定具体且逻辑自洽，高度契合目标题材与受众，可拍摄性强，但原创性未达高度突破",
+                "red_flags": []
+              },
+              "score": {
+                "total": 85.0,
+                "l1_schema": 20,
+                "l2_content": 65.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "世界观设定具体且逻辑自洽，高度契合目标题材与受众，可拍摄性强，但原创性未达高度突破"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G10",
+          "genre_label": "校园青春",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 108488,
+              "tokens": 3081,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体时代（2024年夏）、地点（海城第一中学）、校园环境（民国红砖教学楼、现代玻璃图书馆、百年梧桐树群）、社会规则细节（‘星链’APP投票、阶层划分、成长积分）、人物背景（林小满的社交恐惧与绘画天赋、江野的父母离婚伪装）、视觉元素（日系胶片感、暖黄逆光、老信箱与电子屏对比）及独特情节（秘密交换日记、暴雨和解场景），细节丰富且有强画面感",
+                  "consistency": "时代背景（2024年）与现代元素（‘星链’APP、电子屏）匹配；社会规则（人气投票制、隐形阶级制、情绪掩盖令）相互关联（投票影响阶级、阶级决定破冰任务）；核心冲突（林小满与江野的误会）源于规则（破冰任务），且人物隐藏点与‘禁止公开脆弱情绪’‘禁止跨阶层交流’的规则呼应；独特元素与规则一致，逻辑自洽",
+                  "filmability": "视觉风格（日系胶片感、手持镜头晃动感）符合短剧常见拍摄手法；场景（民国教学楼、现代图书馆、梧桐树群、老信箱、暴雨老亭）具体可搭建或寻找；情节（误会冲突、秘密日记、暴雨和解）为短剧经典结构，易展开；独特元素（双视角叙事、积分兑换）可通过镜头切换、道具实现，制作成本低且可执行",
+                  "genre_fit": "题材为青春校园爱情，核心情节（内向插班生与受欢迎男生从讨厌到相恋）符合该题材；受众16-25岁学生群体，社会规则（人气投票、阶级划分、情绪掩盖）贴近学生生活，易引起共鸣；视觉元素（青春校服、校园角落特写）与受众审美匹配；核心冲突（误解、嫉妒、成长）为青春题材经典主题，完全契合输入定位",
+                  "originality": "在同类青春校园题材中，加入具体社会规则（‘星链’APP人气投票、隐形阶级制、情绪掩盖令）及独特元素（秘密交换日记、成长可视化系统、双视角叙事），区别于泛泛的‘插班生与校草’设定；规则的具体执行方式及情节设计（暴雨中绘画与吉他合奏和解）为题材增添新意，但核心爱情线仍属常见框架"
+                },
+                "overall_comment": "该世界观设定卡细节丰富、逻辑自洽，高度契合青春校园爱情题材与学生受众，可拍摄性强，且通过具体规则与独特元素区别于同类题材，是一份优质的短剧世界观设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 98.0,
+                "l1_schema": 20,
+                "l2_content": 78.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定卡细节丰富、逻辑自洽，高度契合青春校园爱情题材与学生受众，可拍摄性强，且通过具体规则与独特元素区别于同类题材，是一份优质的短剧世界观设定"
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 55199,
+              "tokens": 1606,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体时间（2024年）、地点（云港市青藤学园）、建筑细节（玻璃幕墙与骑楼风格、星空顶、复古书店）及规则细节（星光值等级制、破冰任务），画面感极强",
+                  "consistency": "星光值系统、圈层壁垒与情绪伪装公约形成自洽规则链，主角冲突源于规则压抑，成长路径与规则打破逻辑一致",
+                  "filmability": "校园场景、天文台、复古书店等易拍摄，日系胶片感与手持镜头符合短剧制作习惯，独特元素可通过道具与场景实现",
+                  "genre_fit": "插班生与校草设定、校园规则冲突、青春成长主题完全匹配16-25岁学生受众的青春校园爱情题材",
+                  "originality": "星光值等级制与情绪伪装公约构成新颖规则系统，心情交换日记与成长影像展区别于传统青春剧套路"
+                },
+                "overall_comment": "设定具体且逻辑自洽，高度契合青春校园爱情题材，可拍摄性强，规则系统与独特元素具有较高原创性",
+                "red_flags": []
+              },
+              "score": {
+                "total": 98.0,
+                "l1_schema": 20,
+                "l2_content": 78.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "设定具体且逻辑自洽，高度契合青春校园爱情题材，可拍摄性强，规则系统与独特元素具有较高原创性"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 67854,
+              "tokens": 1955,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 4,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 3
+                },
+                "rationale": {
+                  "specificity": "设定包含具体地点（云汐市大学城、青藤连廊、樱花大道等）、规则细节（银色徽章、青藤指数APP、红色手环）及视觉元素（日系胶片感、逆光镜头），画面感强",
+                  "consistency": "背景（半开放校园）、规则（青藤指数投票制、插班生测试）与核心冲突（内向插班生与人群恐惧症男神的误会）逻辑自洽，规则服务于冲突发展",
+                  "filmability": "校园场景（教室、走廊、钟楼）、视觉元素（自然光、复古课桌）及情节（误会、成长）均适合短剧拍摄，道具（徽章、手环）易实现",
+                  "genre_fit": "完全符合青春校园爱情题材及16-25岁学生受众定位，包含社团、奖学金、人气投票等学生熟悉元素",
+                  "originality": "人群恐惧症与青藤指数结合、插班生适应期测试等元素有一定创新，但整体框架仍属常见青春题材"
+                },
+                "overall_comment": "世界观设定具体且逻辑自洽，高度契合青春校园爱情题材，可拍摄性强，但原创性中等",
+                "red_flags": []
+              },
+              "score": {
+                "total": 85.0,
+                "l1_schema": 20,
+                "l2_content": 65.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 3,
+                    "weighted": 6.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "世界观设定具体且逻辑自洽，高度契合青春校园爱情题材，可拍摄性强，但原创性中等"
+              },
+              "error": null
+            }
+          ]
+        }
+      ],
+      "deepseek-v3.2": [
+        {
+          "genre_id": "G01",
+          "genre_label": "都市逆袭",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 40028,
+              "tokens": 1383,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 33066,
+              "tokens": 1188,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体城市（星海市）、区域（云顶CBD、市郊老旧公寓）、场景元素（霓虹冷暖对比、玻璃幕墙倒影等），画面感强",
+                  "consistency": "背景（2020年代一线都市）、社会规则（职场丛林法则、财富即话语权）与核心冲突（身份错置与阶层固化）逻辑连贯，无矛盾",
+                  "filmability": "场景（CBD、老旧公寓、地铁、豪车）和视觉风格（霓虹、玻璃幕墙、雨夜车窗）明确，冲突情节（职场霸凌、身份揭晓）适合短剧快节奏",
+                  "genre_fit": "底层女孩逆袭、豪门遗失女儿、打脸渣男同事的设定完全符合都市逆袭题材，匹配18-35岁女性受众的情感需求",
+                  "originality": "身份揭晓通过商业思维而非传统信物，豪门内部派系斗争需职场晋级式争取盟友，前男友羞辱与商业利益交织，逆袭武器为底层韧性，区别于同类题材"
+                },
+                "overall_comment": "设定具体、逻辑自洽、符合题材受众，具有一定独特性，适合短剧制作",
+                "red_flags": []
+              },
+              "score": {
+                "total": 94.0,
+                "l1_schema": 20,
+                "l2_content": 74.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "设定具体、逻辑自洽、符合题材受众，具有一定独特性，适合短剧制作"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 33352,
+              "tokens": 1177,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G02",
+          "genre_label": "总裁甜宠",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 49295,
+              "tokens": 1644,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 46154,
+              "tokens": 1476,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 37475,
+              "tokens": 1311,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含星澜市具体特征、四大家族名称、《星澜市特别商事婚姻条例》等规则条款，及玻璃幕墙倒影、雨夜轿车与老旧居民楼同框等视觉元素，极具体有画面感",
+                  "consistency": "世家等级制、契约婚姻合法化等社会规则与身份错位的核心冲突逻辑连贯，男主情感觉醒引发的家族派系震荡符合规则设定，无矛盾",
+                  "filmability": "冷调奢靡与暖调烟火气的视觉碰撞、慈善晚宴/老旧居民楼等场景，及规则战/契约条款修订等冲突均为短剧可拍摄内容",
+                  "genre_fit": "替婚、契约婚姻、冷漠总裁与灰姑娘的设定完全符合甜宠题材核心，18-30岁女性受众定位准确",
+                  "originality": "加入世家等级制、契约条款作为叙事道具、规则战而非恶毒配角等元素，区别于同类甜宠剧，有一定独特性"
+                },
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、符合甜宠题材定位，具有较高可拍摄性和一定独特性，适合作为短剧世界观基础",
+                "red_flags": []
+              },
+              "score": {
+                "total": 98.0,
+                "l1_schema": 20,
+                "l2_content": 78.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、符合甜宠题材定位，具有较高可拍摄性和一定独特性，适合作为短剧世界观基础"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G03",
+          "genre_label": "古装权谋",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 40672,
+              "tokens": 1378,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: ",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 34101,
+              "tokens": 1260,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 37392,
+              "tokens": 1327,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: {\n  \"scores\": {\"specificity\": 5, \"consistency\": 5, \"filmability\": 4, \"genre_fit\": 5, \"originality\": 4},\n  \"rationale\": {\n    \"specificity\": \"设定包含具体王朝（大雍王朝永徽年间）、地点（璇玑宫、司籍房）、机构（风闻司、内书房）、制度（九品中正与科举并行、嫡庶连",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G04",
+          "genre_label": "玄幻修真",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 37720,
+              "tokens": 1330,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 35996,
+              "tokens": 1284,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体的时代（修真纪元九千八百年）、地点（玄黄大陆、东荒域、青云门）、社会规则（灵根品级天/地/玄/黄/凡/废、宗门等级森严）、视觉风格（粗粝水墨基底、焰火灵气特效、建筑对比）及独特机制（混沌道种的法则重构、灵气潮汐），细节丰富且有强烈画面感，极具体可落地",
+                  "consistency": "背景‘末法余晖+宗门垄断’与规则‘灵根定终身+宗门即法度+实力即正义’逻辑自洽，核心冲突‘僵化体系与主角逆袭’贯穿始终，反派动机（维护现有秩序）与规则一致，无矛盾",
+                  "filmability": "视觉风格（水墨+特效）、动作设计（高速肉搏+法术对轰）及单元剧结构（秘境探索）适合短剧节奏，但‘上古遗迹符文光影’‘灵气潮汐特效’需一定后期支持，整体可执行但有轻微制作门槛",
+                  "genre_fit": "完全匹配‘玄幻热血’题材与‘18-30岁男性’受众，废材逆袭、宗门打脸、秘境夺宝、弱肉强食等元素均为目标受众核心爽点",
+                  "originality": "在传统废材流基础上创新：主角传承为‘法则学习与重构’而非直接升级，‘灵气潮汐’赋予周期性战略优势，反派为‘体系维护者’而非单纯恶人，区别于同类题材的套路化设定"
+                },
+                "overall_comment": "该世界观设定具体详实、逻辑自洽，高度契合玄幻热血题材与目标受众，兼具可拍摄性与一定原创性，是优质的短剧世界观设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 95.0,
+                "l1_schema": 20,
+                "l2_content": 75.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定具体详实、逻辑自洽，高度契合玄幻热血题材与目标受众，兼具可拍摄性与一定原创性，是优质的短剧世界观设定"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 37767,
+              "tokens": 1354,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 4,
+                  "consistency": 5,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含五大州域具体特点、修为境界体系、视觉风格细节（如水墨山门、灵气光晕）、服装等级标识等，画面感强且具体可落地",
+                  "consistency": "背景（上古大劫后三万年、传承断绝）与社会规则（天赋至上、宗门垄断、秘境杀戮）、核心冲突（传承打破垄断、牵扯上古真相）逻辑自洽，无明显矛盾",
+                  "filmability": "视觉风格（水墨感、灵气粒子、青铜遗迹）、场景（升仙大会、秘境探索）、服装等级（外门粗布、真传金边）等元素适合短剧特效与场景设计，可执行性高",
+                  "genre_fit": "废材逆袭、上古传承、宗门垄断、越阶战斗等元素完全符合玄幻热血题材，受众定位18-30岁男性准确，匹配度高",
+                  "originality": "逆演道纹（逆向解析功法、消耗寿命）、力量体系代差（上古vs现代功法）、墟鼎（吞噬升级）等元素区别于普通废材流，具有独特性"
+                },
+                "overall_comment": "该世界观设定具体有画面感、逻辑自洽，高度符合玄幻热血题材与受众定位，包含独特元素，适合短剧实际制作",
+                "red_flags": []
+              },
+              "score": {
+                "total": 91.0,
+                "l1_schema": 20,
+                "l2_content": 71.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 4,
+                    "weighted": 16.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定具体有画面感、逻辑自洽，高度符合玄幻热血题材与受众定位，包含独特元素，适合短剧实际制作"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G05",
+          "genre_label": "悬疑反转",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 32119,
+              "tokens": 1162,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体城市（新港市）、时间（202X年）、科技公司（星火科技）、产业（记忆银行）、社会规则细节（记忆数据法律模糊、警方审批手续）及视觉风格细节（冷峻蓝调、霓虹灯污染、高对比度褪色等），画面感强且极具体可落地",
+                  "consistency": "背景（202X年新港市科技发达但割裂）、社会规则（记忆即资产与隐私模糊、科技寡头渗透等）与核心冲突（侦探调查连环失忆案发现自身记忆矛盾、记忆所有权争夺）逻辑自洽，无矛盾",
+                  "filmability": "视觉风格（冷峻蓝调、霓虹灯污染等）适合短剧拍摄，场景（记忆银行、实验室等）、道具（老式怀表、加密硬盘）及镜头语言（监控视角、广角窥探）易实现，核心冲突符合短剧紧凑节奏，可执行性高",
+                  "genre_fit": "悬疑犯罪题材（连环失忆案、侦探调查、记忆篡改、科技阴谋）与受众20-40岁（现代都市、科技元素、记忆研究）完全匹配输入要求",
+                  "originality": "侦探自身记忆成为核心谜题与犯罪现场、案件推进依赖记忆物证（肌肉记忆、情感印记等）、最终BOSS可能是系统或协议、每集结尾钩子为主角记忆裂痕，区别于传统悬疑犯罪，有独特性"
+                },
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、符合悬疑犯罪题材及受众定位，具有独特创意且适合短剧拍摄，是一份高质量设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 95.0,
+                "l1_schema": 20,
+                "l2_content": 75.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、符合悬疑犯罪题材及受众定位，具有独特创意且适合短剧拍摄，是一份高质量设定"
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 32016,
+              "tokens": 1164,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 4,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体时代（2020年代中后期）、城市（镜城）、机构（记忆银行/特记科/溯光公司）、技术细节（记忆存储/天网白名单）及视觉风格（冷峻赛博朋克/记忆碎片闪回失真效果），画面感强且可落地",
+                  "consistency": "背景（科技发达的镜城）与规则（记忆隐私商业化/数据监控白名单/特记科专管记忆案件）逻辑连贯，核心冲突（主角调查连环失忆案发现另一个自己）与记忆篡改设定完全一致，无矛盾",
+                  "filmability": "视觉风格（赛博朋克色调/高对比度光影/数据界面）可通过灯光/滤镜/特效实现，核心冲突（身份谜题/每集强钩子）适合短剧节奏，场景（特记科/记忆银行/老旧档案室）可搭建或选择，可执行性高",
+                  "genre_fit": "悬疑犯罪题材核心元素（连环案/侦探调查/身份谜题）齐全，科技元素（记忆技术/数据监控）符合20-40岁受众审美，核心冲突的两难抉择（揭露真相导致身份崩解）增加张力，高度匹配题材与受众",
+                  "originality": "将“侦探记忆完好”设计为陷阱，反派是主角独立运行的记忆副本，受害者失忆指向共同集体事件，区别于普通记忆犯罪剧，有一定独特性"
+                },
+                "overall_comment": "该世界观设定具体、逻辑自洽，高度符合悬疑犯罪题材与20-40岁受众定位，有独特记忆副本与身份陷阱元素，适合短剧制作",
+                "red_flags": []
+              },
+              "score": {
+                "total": 95.0,
+                "l1_schema": 20,
+                "l2_content": 75.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 4,
+                    "weighted": 12.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定具体、逻辑自洽，高度符合悬疑犯罪题材与20-40岁受众定位，有独特记忆副本与身份陷阱元素，适合短剧制作"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 25021,
+              "tokens": 973,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: ",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G06",
+          "genre_label": "现代家庭",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 32590,
+              "tokens": 1157,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: ",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 29567,
+              "tokens": 1099,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体时代（2020年代中国一线城市）、地点（上海/深圳中产社区）、场景（商品房、社区花园、学校、咖啡厅、购物中心），社会规则有细节（婆婆给继子更好房间、前任通过共同抚养权介入、中产经济压力具体到国际幼儿园/房贷），视觉风格有具体镜头语言（冷暖色调、逼仄构图、玻璃反射），画面感极强",
+                  "consistency": "社会规则（血缘优先、前任边界、中产经济、数字化监控）与核心冲突（三重撕裂）逻辑自洽，如“血缘优先”导致继子冷暴力、“前任边界”导致前夫纠缠，规则与冲突一一对应，内部完全一致",
+                  "filmability": "场景为常见都市空间（易拍摄），视觉风格用短剧常用镜头语言（手持摄影、冷暖色调），taboos避免狗血事件（减少特效/剧情难度），符合短剧制作实际",
+                  "genre_fit": "题材为家庭情感，受众是25-45岁已婚女性，设定中的重组家庭矛盾（婆媳、前任、经济）、现代家庭场景（微信群、智能手表）均为目标受众关心的话题，真实感强，高度匹配",
+                  "originality": "区别于同类题材套路（继子嫉妒、婆婆恶毒、生育解决），继子排斥源于生母创伤记忆，婆婆刁难源于秩序焦虑，用“家庭融合实验”作为情感纽带，结局为平凡细微时刻，有独特性但未完全突破重组家庭题材框架"
+                },
+                "overall_comment": "该世界观设定具体真实、逻辑自洽，精准匹配家庭情感题材受众需求，可拍摄性高且有一定独特性，是优质的短剧世界观设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 98.0,
+                "l1_schema": 20,
+                "l2_content": 78.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定具体真实、逻辑自洽，精准匹配家庭情感题材受众需求，可拍摄性高且有一定独特性，是优质的短剧世界观设定"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 36716,
+              "tokens": 1272,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: ",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G07",
+          "genre_label": "职场竞争",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 31697,
+              "tokens": 1200,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体时代（2020年代中后期）、地点（一线/新一线城市CBD）、场景（写字楼工位/会议室/茶水间、地铁、紧凑公寓）、行业（互联网大厂/精品投行）及细节（学历标注、OKR/KPI、隐性加班的折叠床、圈层化社交场景、服装对比），visual_style有明确色调（冷峻蓝灰、霓虹夜色）、构图（狭窄空间）及时间流逝视觉化（天色变化、亮屏），画面感极强",
+                  "consistency": "背景（2020年代职场）、社会规则（学历偏见、隐性加班、圈层化社交）、核心冲突（主角冲破晋升壁垒）及visual_style（压抑氛围）逻辑自洽，taboos（不公开质疑文化、不越级汇报）与规则一致，unique_elements（能力可视化、情商微观博弈）支撑核心冲突，无矛盾",
+                  "filmability": "场景（写字楼、地铁、公寓）易取景，visual_style细节（色调、构图、服装）可通过摄影/美术实现，社会规则（学历标注、OKR、圈层化社交）可通过道具/表演呈现，核心冲突（成果被归因运气、抉择自尊与迎合）可通过剧情/表演展现，高度可执行",
+                  "genre_fit": "聚焦职场竞争、学历偏见、隐性加班等职场人群痛点，核心冲突（主角凭业务能力/情商晋升）符合职场励志题材，受众（22-35岁职场人）易共鸣，高度匹配",
+                  "originality": "虽职场励志题材常见，但通过“能力可视化具体过程”“情商博弈微观刻画”“代价真实呈现”“反派复杂性”等细节，区别于同类题材的脸谱化冲突，有一定独特性，但未突破题材框架"
+                },
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合职场励志题材及目标受众，细节处理有独特性，是优质的微短剧世界观设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 98.0,
+                "l1_schema": 20,
+                "l2_content": 78.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合职场励志题材及目标受众，细节处理有独特性，是优质的微短剧世界观设定"
+              },
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 35450,
+              "tokens": 1270,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体时代（2020年代）、地点（一线城市互联网/金融公司）、场景（开放式办公区、便利店、地铁等），社会规则（学历天花板、加班文化）、核心冲突（项目竞标、晋升答辩）及视觉风格（冷调写实、框架式构图）均有强烈画面感，细节具象可落地",
+                  "consistency": "背景（当代职场）、社会规则（学历歧视、工时绑架）、核心冲突（个体与系统偏见对抗）及视觉风格（冷调压抑）逻辑自洽，所有元素均围绕“职场生存”主题展开，无矛盾",
+                  "filmability": "场景（办公室、会议室、便利店）易取景，情节（项目竞标、晋升答辩、跨部门博弈）可通过具体动作/对话呈现，视觉风格（冷调、框架式构图）为影视常用手法，真实细节（会议纪要、数据图表）易用道具/特写表现，制作成本低、执行难度小",
+                  "genre_fit": "聚焦职场人群真实困境（学历歧视、加班压力、微权力博弈），主角为“非天才型”奋斗者，符合22-35岁职场人的共鸣点，完全匹配“职场励志”题材及目标受众定位",
+                  "originality": "区别于同类题材的“金手指”“贵人相助”套路，聚焦“非天才型”奋斗者的日常极致积累、“微权力”博弈及压力具象化（身体信号），真实细节堆砌（职场技能）具有独特性，但职场题材本身较常见"
+                },
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合职场励志题材及目标受众，且有独特的“非天才型”奋斗者视角，是优质的微短剧世界观设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 98.0,
+                "l1_schema": 20,
+                "l2_content": 78.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定卡具体性强、逻辑自洽、可拍摄性高，高度契合职场励志题材及目标受众，且有独特的“非天才型”奋斗者视角，是优质的微短剧世界观设定"
+              },
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 35724,
+              "tokens": 1281,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": null,
+                "scores": {
+                  "specificity": 5,
+                  "consistency": 5,
+                  "filmability": 5,
+                  "genre_fit": 5,
+                  "originality": 4
+                },
+                "rationale": {
+                  "specificity": "设定包含具体的时代（2020年代中国一线城市）、地点（上海陆家嘴、北京国贸等）、公司类型（互联网科技公司、精品投行）、场景细节（地铁通勤、24小时便利店、凌晨写字楼）、社会规则的具体表现（会议室座位、项目署名顺序、培训资源分配）及视觉风格元素（冷调写实主义、高对比度光影、密集UI界面），画面感极强，可落地性高",
+                  "consistency": "背景（当代一线城市高压职场）、社会规则（学历隐形天花板、KPI丛林法则等）、核心冲突（能力正义与身份正义的撕扯）、视觉风格（冷调、拥挤、数据界面）及禁忌（公开质疑学历政策、越级汇报）之间逻辑自洽，无明显矛盾",
+                  "filmability": "场景（地铁、格子间、会议室等）均为常见职场场景，易取景；视觉风格（冷调写实、高对比度光影）符合短剧制作习惯；冲突通过微观场景（会议室座位、微信群发言等）呈现，适合短剧短平快节奏；情节（主角熬夜做数据、健康预警等）易通过镜头语言表现",
+                  "genre_fit": "题材（职场励志）、受众（22-35岁职场人群）与设定高度匹配，核心冲突（普通职员对抗高学历竞争对手和偏见老板）、社会规则（学历隐形天花板、KPI丛林法则）及场景（一线城市职场、通勤、加班）均符合职场人群真实体验，能引发共鸣",
+                  "originality": "主题（职场逆袭）并非全新，但通过‘非天才型努力’（业务细节钻研、人际信号捕捉）、‘系统性阻力’（对手和老板是系统规则受益者，偏见有自洽逻辑）、‘代价真实呈现’（晋升伴随健康损耗、亲密关系疏离）及‘微观权力场描写’（会议室座位、微信群发言时机等）的刻画，区别于同类题材的脸谱化反派和突然逆袭，有一定独特性"
+                },
+                "overall_comment": "该世界观设定卡具体性、一致性、可拍摄性、题材契合度极高，独特性较好，精准捕捉了当代职场人群的真实体验与冲突，适合作为职场励志微短剧的基础设定",
+                "red_flags": []
+              },
+              "score": {
+                "total": 98.0,
+                "l1_schema": 20,
+                "l2_content": 78.0,
+                "l2_detail": {
+                  "specificity": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "consistency": {
+                    "raw": 5,
+                    "weighted": 20.0
+                  },
+                  "filmability": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "genre_fit": {
+                    "raw": 5,
+                    "weighted": 15.0
+                  },
+                  "originality": {
+                    "raw": 4,
+                    "weighted": 8.0
+                  }
+                },
+                "red_flags": [],
+                "overall_comment": "该世界观设定卡具体性、一致性、可拍摄性、题材契合度极高，独特性较好，精准捕捉了当代职场人群的真实体验与冲突，适合作为职场励志微短剧的基础设定"
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G08",
+          "genre_label": "赛博朋克科幻",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 31452,
+              "tokens": 1175,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 34317,
+              "tokens": 1199,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 27201,
+              "tokens": 1010,
+              "schema_pass": true,
+              "schema_errors": [],
+              "judge": {
+                "error": "judge parse failed: {\n  \"scores\": {\"specificity\": 5, \"consistency\": 5, \"filmability\": 4, \"genre_fit\": 5, \"originality\": 4},\n  \"rationale\": {\"specificity\": \"设定包含具体城市名（新长安）、穹顶（天穹）、分区（光区/影区）、规则细节（数据身份三大财团认证）、视觉元素（赛博朋克光影、潮湿电",
+                "scores": null
+              },
+              "score": {
+                "total": 20,
+                "l1_schema": 20,
+                "l2_content": 0,
+                "l2_detail": {},
+                "red_flags": [],
+                "overall_comment": ""
+              },
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G09",
+          "genre_label": "重生复仇",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 41959,
+              "tokens": 1442,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 36746,
+              "tokens": 1341,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 39228,
+              "tokens": 1391,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            }
+          ]
+        },
+        {
+          "genre_id": "G10",
+          "genre_label": "校园青春",
+          "rounds": [
+            {
+              "round": 1,
+              "latency_ms": 38647,
+              "tokens": 1453,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 2,
+              "latency_ms": 5541,
+              "tokens": 447,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            },
+            {
+              "round": 3,
+              "latency_ms": 31958,
+              "tokens": 1239,
+              "schema_pass": false,
+              "schema_errors": [
+                "JSON parse failed"
+              ],
+              "judge": null,
+              "score": null,
+              "error": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "summary": {
+    "by_model": {
+      "ernie-5.0": {
+        "total_rounds": 30,
+        "schema_pass": 26,
+        "schema_pass_rate": 86.7,
+        "scores": [
+          92.0,
+          20,
+          88.0,
+          85.0,
+          20,
+          91.0,
+          98.0,
+          20,
+          20,
+          85.0,
+          87.0,
+          91.0,
+          93.0,
+          85.0,
+          20,
+          98.0,
+          96.0,
+          93.0,
+          89.0,
+          20,
+          20,
+          20,
+          85.0,
+          98.0,
+          98.0,
+          85.0
+        ],
+        "latencies": [
+          54497,
+          59319,
+          55269,
+          38124,
+          48759,
+          54998,
+          106890,
+          71526,
+          84779,
+          62809,
+          92676,
+          69223,
+          65038,
+          47698,
+          56881,
+          115067,
+          57869,
+          60623,
+          62210,
+          64721,
+          48354,
+          51126,
+          60128,
+          96450,
+          68122,
+          67132,
+          58658,
+          108488,
+          55199,
+          67854
+        ],
+        "tokens": [
+          1458,
+          1632,
+          1457,
+          1213,
+          1430,
+          1558,
+          2782,
+          1891,
+          2339,
+          1629,
+          2326,
+          1835,
+          1867,
+          1406,
+          1565,
+          3343,
+          1561,
+          1764,
+          1710,
+          1853,
+          1370,
+          1504,
+          1614,
+          2582,
+          1792,
+          1774,
+          1627,
+          3081,
+          1606,
+          1955
+        ],
+        "red_flag_rounds": 0,
+        "by_genre": {
+          "G01": {
+            "label": "都市逆袭",
+            "schema_pass": 2,
+            "total": 3,
+            "scores": [
+              92.0,
+              20
+            ],
+            "latencies": [
+              54497,
+              59319,
+              55269
+            ],
+            "schema_pass_rate": 66.7,
+            "score_avg": 56.0,
+            "latency_avg": 56362
+          },
+          "G02": {
+            "label": "总裁甜宠",
+            "schema_pass": 2,
+            "total": 3,
+            "scores": [
+              88.0,
+              85.0
+            ],
+            "latencies": [
+              38124,
+              48759,
+              54998
+            ],
+            "schema_pass_rate": 66.7,
+            "score_avg": 86.5,
+            "latency_avg": 47294
+          },
+          "G03": {
+            "label": "古装权谋",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              20,
+              91.0,
+              98.0
+            ],
+            "latencies": [
+              106890,
+              71526,
+              84779
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 69.7,
+            "latency_avg": 87732
+          },
+          "G04": {
+            "label": "玄幻修真",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              20,
+              20,
+              85.0
+            ],
+            "latencies": [
+              62809,
+              92676,
+              69223
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 41.7,
+            "latency_avg": 74903
+          },
+          "G05": {
+            "label": "悬疑反转",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              87.0,
+              91.0,
+              93.0
+            ],
+            "latencies": [
+              65038,
+              47698,
+              56881
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 90.3,
+            "latency_avg": 56539
+          },
+          "G06": {
+            "label": "现代家庭",
+            "schema_pass": 1,
+            "total": 3,
+            "scores": [
+              85.0
+            ],
+            "latencies": [
+              115067,
+              57869,
+              60623
+            ],
+            "schema_pass_rate": 33.3,
+            "score_avg": 85.0,
+            "latency_avg": 77853
+          },
+          "G07": {
+            "label": "职场竞争",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              20,
+              98.0,
+              96.0
+            ],
+            "latencies": [
+              62210,
+              64721,
+              48354
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 71.3,
+            "latency_avg": 58428
+          },
+          "G08": {
+            "label": "赛博朋克科幻",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              93.0,
+              89.0,
+              20
+            ],
+            "latencies": [
+              51126,
+              60128,
+              96450
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 67.3,
+            "latency_avg": 69235
+          },
+          "G09": {
+            "label": "重生复仇",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              20,
+              20,
+              85.0
+            ],
+            "latencies": [
+              68122,
+              67132,
+              58658
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 41.7,
+            "latency_avg": 64637
+          },
+          "G10": {
+            "label": "校园青春",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              98.0,
+              98.0,
+              85.0
+            ],
+            "latencies": [
+              108488,
+              55199,
+              67854
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 93.7,
+            "latency_avg": 77180
+          }
+        },
+        "score_avg": 69.1,
+        "score_p10": 20,
+        "latency_avg": 67016,
+        "latency_p95": 108488,
+        "token_avg": 1851,
+        "red_flag_rate": 0.0
+      },
+      "deepseek-v3.2": {
+        "total_rounds": 30,
+        "schema_pass": 16,
+        "schema_pass_rate": 53.3,
+        "scores": [
+          94.0,
+          98.0,
+          20,
+          20,
+          95.0,
+          91.0,
+          95.0,
+          95.0,
+          20,
+          20,
+          98.0,
+          20,
+          98.0,
+          98.0,
+          98.0,
+          20
+        ],
+        "latencies": [
+          40028,
+          33066,
+          33352,
+          49295,
+          46154,
+          37475,
+          40672,
+          34101,
+          37392,
+          37720,
+          35996,
+          37767,
+          32119,
+          32016,
+          25021,
+          32590,
+          29567,
+          36716,
+          31697,
+          35450,
+          35724,
+          31452,
+          34317,
+          27201,
+          41959,
+          36746,
+          39228,
+          38647,
+          5541,
+          31958
+        ],
+        "tokens": [
+          1383,
+          1188,
+          1177,
+          1644,
+          1476,
+          1311,
+          1378,
+          1260,
+          1327,
+          1330,
+          1284,
+          1354,
+          1162,
+          1164,
+          973,
+          1157,
+          1099,
+          1272,
+          1200,
+          1270,
+          1281,
+          1175,
+          1199,
+          1010,
+          1442,
+          1341,
+          1391,
+          1453,
+          447,
+          1239
+        ],
+        "red_flag_rounds": 0,
+        "by_genre": {
+          "G01": {
+            "label": "都市逆袭",
+            "schema_pass": 1,
+            "total": 3,
+            "scores": [
+              94.0
+            ],
+            "latencies": [
+              40028,
+              33066,
+              33352
+            ],
+            "schema_pass_rate": 33.3,
+            "score_avg": 94.0,
+            "latency_avg": 35482
+          },
+          "G02": {
+            "label": "总裁甜宠",
+            "schema_pass": 1,
+            "total": 3,
+            "scores": [
+              98.0
+            ],
+            "latencies": [
+              49295,
+              46154,
+              37475
+            ],
+            "schema_pass_rate": 33.3,
+            "score_avg": 98.0,
+            "latency_avg": 44308
+          },
+          "G03": {
+            "label": "古装权谋",
+            "schema_pass": 2,
+            "total": 3,
+            "scores": [
+              20,
+              20
+            ],
+            "latencies": [
+              40672,
+              34101,
+              37392
+            ],
+            "schema_pass_rate": 66.7,
+            "score_avg": 20.0,
+            "latency_avg": 37388
+          },
+          "G04": {
+            "label": "玄幻修真",
+            "schema_pass": 2,
+            "total": 3,
+            "scores": [
+              95.0,
+              91.0
+            ],
+            "latencies": [
+              37720,
+              35996,
+              37767
+            ],
+            "schema_pass_rate": 66.7,
+            "score_avg": 93.0,
+            "latency_avg": 37161
+          },
+          "G05": {
+            "label": "悬疑反转",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              95.0,
+              95.0,
+              20
+            ],
+            "latencies": [
+              32119,
+              32016,
+              25021
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 70.0,
+            "latency_avg": 29719
+          },
+          "G06": {
+            "label": "现代家庭",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              20,
+              98.0,
+              20
+            ],
+            "latencies": [
+              32590,
+              29567,
+              36716
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 46.0,
+            "latency_avg": 32958
+          },
+          "G07": {
+            "label": "职场竞争",
+            "schema_pass": 3,
+            "total": 3,
+            "scores": [
+              98.0,
+              98.0,
+              98.0
+            ],
+            "latencies": [
+              31697,
+              35450,
+              35724
+            ],
+            "schema_pass_rate": 100.0,
+            "score_avg": 98.0,
+            "latency_avg": 34290
+          },
+          "G08": {
+            "label": "赛博朋克科幻",
+            "schema_pass": 1,
+            "total": 3,
+            "scores": [
+              20
+            ],
+            "latencies": [
+              31452,
+              34317,
+              27201
+            ],
+            "schema_pass_rate": 33.3,
+            "score_avg": 20.0,
+            "latency_avg": 30990
+          },
+          "G09": {
+            "label": "重生复仇",
+            "schema_pass": 0,
+            "total": 3,
+            "scores": [],
+            "latencies": [
+              41959,
+              36746,
+              39228
+            ],
+            "schema_pass_rate": 0.0,
+            "score_avg": null,
+            "latency_avg": 39311
+          },
+          "G10": {
+            "label": "校园青春",
+            "schema_pass": 0,
+            "total": 3,
+            "scores": [],
+            "latencies": [
+              38647,
+              5541,
+              31958
+            ],
+            "schema_pass_rate": 0.0,
+            "score_avg": null,
+            "latency_avg": 25382
+          }
+        },
+        "score_avg": 67.5,
+        "score_p10": 20,
+        "latency_avg": 34699,
+        "latency_p95": 46154,
+        "token_avg": 1246,
+        "red_flag_rate": 0.0
+      }
+    },
+    "by_genre": {},
+    "cross_model_comparison": []
+  }
+}
