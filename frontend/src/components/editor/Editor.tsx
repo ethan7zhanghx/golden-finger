@@ -15,6 +15,7 @@ interface EditorProps {
 /**
  * TipTap headless editor with minimal styling.
  * Used for richtext steps (opening, dialogue, synopsis).
+ * No outer border — the Paper card in StepEditor handles the visual container.
  */
 export function Editor({
   content,
@@ -33,7 +34,7 @@ export function Editor({
     editorProps: {
       attributes: {
         class:
-          "prose prose-base max-w-none focus:outline-none min-h-[calc(100vh-16rem)] px-8 py-6 leading-relaxed",
+          "prose prose-base max-w-none focus:outline-none min-h-[calc(100vh-16rem)] px-0 py-2 leading-relaxed text-[#2D2A26]",
       },
     },
     onUpdate: ({ editor: e }) => {
@@ -59,7 +60,7 @@ export function Editor({
     <div className="flex flex-col flex-1">
       {/* Toolbar */}
       {editor && editable && (
-        <div className="flex items-center gap-0.5 px-4 py-2 border-b border-gray-100 bg-gray-50/60">
+        <div className="flex items-center gap-0.5 px-0 py-2 border-b border-[#E8E4DC] bg-transparent">
           <ToolbarButton
             active={editor.isActive("bold")}
             onClick={() => editor.chain().focus().toggleBold().run()}
@@ -72,7 +73,7 @@ export function Editor({
             label="I"
             className="italic"
           />
-          <div className="w-px h-4 bg-gray-200 mx-1" />
+          <div className="w-px h-4 bg-[#E8E4DC] mx-1" />
           <ToolbarButton
             active={editor.isActive("heading", { level: 1 })}
             onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
@@ -85,7 +86,7 @@ export function Editor({
             label="H2"
             className="text-xs"
           />
-          <div className="w-px h-4 bg-gray-200 mx-1" />
+          <div className="w-px h-4 bg-[#E8E4DC] mx-1" />
           <ToolbarButton
             active={editor.isActive("bulletList")}
             onClick={() => editor.chain().focus().toggleBulletList().run()}
@@ -122,7 +123,7 @@ function ToolbarButton({
       onClick={onClick}
       className={`
         px-2 py-1 text-sm rounded transition-colors
-        ${active ? "bg-gray-200 text-gray-900" : "text-gray-500 hover:bg-gray-100"}
+        ${active ? "bg-[#F5E6C8] text-[#2D2A26]" : "text-[#7C6F5B] hover:bg-[#EDE9E2]"}
         ${className}
       `}
     >
