@@ -49,6 +49,7 @@ class Project(Base):
         Enum("draft", "in_progress", "completed", "archived", name="project_status"),
         default="draft",
     )
+    current_step: Mapped[str] = mapped_column(String(50), nullable=False, server_default="worldview")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
