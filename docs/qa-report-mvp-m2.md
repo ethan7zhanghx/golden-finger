@@ -1,9 +1,17 @@
-# 金手指 MVP M2 — QA 验收报告
+# 金手指 MVP M2 — QA 验收报告（修订版 v2）
 
-> 报告日期：2026-04-10
+> 报告日期：2026-04-10（v2 更新：发现 AI 服务 placeholder 阻断项）
 > 测试人：QA Agent
 > 分支：agent/qa/96ead3eb
 > 测试方式：静态代码分析 + AI 工作流单元测试（环境限制：无 Docker/PostgreSQL/Redis）
+
+---
+
+## ⚠️ v2 修订说明
+
+本报告在 PM 验收 v1 后发现第二份 QA 报告（commit 718dc3e，branch agent/pm/6e880a1f）提出了遗漏的关键阻断项：**`backend/app/services/ai.py` 中的 `LLMClient` 为 placeholder 实现，AI 生成端点返回 mock 数据而非真实模型输出**。
+
+据此将发布建议从 **CONDITIONAL SHIP → DO NOT SHIP**，并在 Bug 清单中补充 BUG-00。
 
 ---
 
@@ -11,14 +19,15 @@
 
 | 维度 | 状态 |
 |------|------|
-| AI 工作流单元测试（19 条） | ✅ **全部通过** |
+| AI 工作流单元测试（19 条） | ✅ **全部通过（mock 环境）** |
+| 后端 AI 服务接入 | ⛔ **LLMClient 为 placeholder，未调用真实 ERNIE API** |
 | 后端 API 结构审查 | ✅ **结构完整，存在 3 个功能缺陷** |
 | 前端页面结构审查 | ✅ **主流程完整，存在 2 个类型错误** |
 | 前后端联调可行性 | ⚠️ **AI 生成端点无鉴权，current_step 字段缺失** |
 | 环境可启动性 | ⚠️ **依赖 Docker，本地无法独立启动** |
 
-**整体结论：CONDITIONAL SHIP**
-核心链路（注册→登录→项目管理→步骤编辑）代码结构完整，AI 工作流 mock 测试全通过。但存在 3 个影响集成联调的中高风险 bug，建议修复后再执行端到端验收。
+**整体结论：⛔ DO NOT SHIP**
+AI 生成（产品核心功能）使用 placeholder 实现，用户将看到 mock 数据而非真实模型输出，MVP 核心价值无法交付。
 
 ---
 
@@ -66,6 +75,27 @@ backend/tests_ai/test_workflows.py::TestWorkflowRouter::test_unknown_step      P
 ---
 
 ## Bug 清单
+
+### BUG-00 【阻断】AI 生成服务为 placeholder，未接入真实 ERNIE API
+
+**文件**：`backend/app/services/ai.py`，`LLMClient` 类（第 48-69 行）
+
+**现象**：
+`WorkflowEngine` 内部使用 `LLMClient`，其 `generate()` 方法固定返回：
+```json
+{"summary": "placeholder generation", "messages": [...], ...}
+```
+流式模式返回静态字符串 `"基于 X 消息生成中...结构化输出已完成。"`
+
+**影响**：用户点击「AI 生成」后看到 mock 字符串而非真实 AI 输出，MVP 核心价值完全无法交付。
+
+**根因**：`backend/ai/ernie_client.py` 中已有完整的 ERNIE API 客户端实现（`ErnieClient`），但 `services/ai.py` 未调用它，使用了内部 placeholder `LLMClient`。
+
+**建议修复**：在 `WorkflowEngine.__init__` 中实例化 `ErnieClient`，替换内部 `LLMClient`，并配置 `.env` 中的 `ernie_api_key`。
+
+**Owner**：BE
+
+---
 
 ### BUG-01 【高】`Project` 模型和 Schema 缺少 `current_step` 字段
 
@@ -179,10 +209,13 @@ export interface UserRegisterInput {
 
 ## 发布建议
 
-**CONDITIONAL SHIP** — 满足以下条件后可发布：
+**⛔ DO NOT SHIP（当前状态）**
 
-- [ ] BUG-01 修复（`current_step` 字段）
-- [ ] BUG-02 修复（AI 端点鉴权）
-- [ ] 端到端人工验收（登录 → 创建项目 → AI 生成 → 接受候选）至少走通一次
+必须满足以下全部条件后方可转为 SHIP：
 
-BUG-03、BUG-04 可列入下一版本修复，不阻塞当前发布。
+- [ ] **BUG-00**（阻断）：`WorkflowEngine` 接入真实 `ErnieClient`，AI 生成返回真实模型输出
+- [ ] **BUG-01**（高）：`Project` 模型添加 `current_step` 字段，前后端均需更新
+- [ ] **BUG-02**（高）：AI 端点添加 `Depends(get_current_user)` 鉴权
+- [ ] **E2E 验收**：Docker 环境下完整流程（登录 → 创建项目 → AI 生成 → 接受候选）至少走通一次
+
+BUG-03、BUG-04 可列入下一版本修复，不阻塞发布。
