@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HookInput",
+  "description": "爽点和钩子步骤的输入 schema",
+  "type": "object",
+  "required": ["worldview_json", "selling_points_json"],
+  "properties": {
+    "worldview_json": {
+      "type": "string",
+      "minLength": 1,
+      "description": "上游世界观设定卡的 JSON 字符串"
+    },
+    "selling_points_json": {
+      "type": "string",
+      "minLength": 1,
+      "description": "上游卖点卡的 JSON 字符串"
+    },
+    "audience": {
+      "type": "string",
+      "description": "目标受众",
+      "default": "18-35岁女性"
+    },
+    "style_preference": {
+      "type": "string",
+      "description": "偏好风格",
+      "default": ""
+    }
+  },
+  "additionalProperties": false
+}
