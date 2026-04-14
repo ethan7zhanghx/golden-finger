@@ -30,7 +30,107 @@ body {
 
 .font-script { font-family: var(--font-script); }
 
-/* Apply serif font to TipTap rich-text editor content */
+/* ── TipTap base ─────────────────────────────────────────── */
 .ProseMirror {
   font-family: var(--font-script);
+  font-size: 16px;
+  line-height: 1.9;
+  color: #2D2A26;
+}
+
+/* Placeholder text for all block types */
+.ProseMirror p.is-editor-empty:first-child::before,
+.ProseMirror div.is-empty::before {
+  content: attr(data-placeholder);
+  color: #C0B8AE;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+/* ── 剧本块类型样式 ───────────────────────────────────────── */
+
+/* 场景头：第X集 · 场景名 */
+.ProseMirror div[data-type="scene-heading"] {
+  font-family: var(--font-script);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #5C5548;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 1.5rem 0 0.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid #E0DCD6;
+  position: relative;
+}
+
+.ProseMirror div[data-type="scene-heading"]:first-child {
+  border-top: none;
+  padding-top: 0.25rem;
+  margin-top: 0;
+}
+
+/* 对白：人物名：台词 */
+.ProseMirror div[data-type="dialogue"] {
+  font-family: var(--font-script);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #2D2A26;
+  padding: 0.15rem 0;
+  margin: 0;
+}
+
+/* 动作描写：斜体，略深色 */
+.ProseMirror div[data-type="action"] {
+  font-family: var(--font-script);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #6B5F50;
+  line-height: 1.85;
+  padding: 0.1rem 0;
+}
+
+/* 旁白：居中，灰色，用于时间/空间过渡 */
+.ProseMirror div[data-type="narration"] {
+  font-family: var(--font-script);
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+  color: #9B8F7E;
+  letter-spacing: 0.04em;
+  line-height: 2.2;
+  padding: 0.5rem 0;
+}
+
+/* 正文段落 */
+.ProseMirror p {
+  font-size: 1rem;
+  line-height: 1.9;
+  margin: 0;
+  padding: 0.1rem 0;
+}
+
+/* ── 编辑器整体 ───────────────────────────────────────────── */
+.script-editor {
+  padding: 0;
+}
+
+/* 选中状态 */
+.ProseMirror ::selection {
+  background: rgba(200, 151, 74, 0.2);
+}
+
+/* 光标所在块高亮（轻微） */
+.ProseMirror div[data-type]:focus-within {
+  background: transparent;
+}
+
+/* Placeholder for custom nodes */
+.ProseMirror div[data-type].is-empty::before {
+  content: attr(data-placeholder);
+  color: #C0B8AE;
+  pointer-events: none;
+  float: left;
+  height: 0;
+  font-style: normal;
 }
